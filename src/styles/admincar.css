@@ -1,0 +1,266 @@
+.car_container{
+    margin:10%;
+
+}
+.top{
+    text-align: center;
+}
+.top img{
+    width:30%;
+}
+.middle{
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    min-width: 100%;
+    margin:5%;
+}
+.table{
+    min-width:100%;
+    max-width: 100%;
+}
+.table th{
+    border-bottom:  1px solid black;
+
+}
+.table td{
+    text-align: center;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+.board_page{
+    text-align: center;
+}
+.board_page a{
+    text-decoration: none;
+    color:black;
+      display: inline-block;
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    border-left: 0;
+    line-height: 100%;
+    font-weight: lighter;
+}
+.board_page a:hover{
+    background-color: black;
+    color:azure;
+    transition: 0.5s;
+}
+.board_page a.bt {
+    padding-top: 8px;
+    font-size: 1rem;
+    letter-spacing: -1px;
+}
+
+.board_page a.num {
+    padding-top: 8px;
+    font-size:  1rem;
+}
+.board_page a:first-child {
+    border-left: 1px solid #ddd;
+}
+.board_page {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0;
+}
+.success{
+    width:100%;
+    min-height:100%;
+    background-color: rgb(216, 234, 238);
+    border:none;
+}
+.success:hover{
+    background-color: rgb(85, 167, 239);
+    color:white;
+    transition: 0.5s;
+}
+.delete{
+    width:100%;
+    background-color: rgb(216, 234, 238);
+    border: none;
+}
+.delete:hover{
+    background-color: rgb(244, 60, 60);
+    color:white;
+    transition: 0.5s;
+}
+  .popup_show{
+    opacity: 1;
+    z-index:1000;
+    transition: all 1s;
+    margin:5%;
+    border:2px solid black;
+
+}
+a{text-decoration:none;}
+.wrap{
+  margin:1%;
+  text-align: center;
+}
+.btn_open{
+  font-weight:bold;
+   margin:5px;
+    padding:4px 6px;
+     color:#050505;
+     background-color: rgb(216, 234, 238);
+     border:none;
+}
+.btn_open:hover{
+    background-color: rgb(85, 167, 239);
+    color:white;
+    transition: 0.5s;
+}
+.delete{
+    color:#050505;
+     background-color: rgb(216, 234, 238);
+     border:none;
+    margin:5px;
+    padding:4px 6px;
+    font-weight:bold;
+    width:100%;
+    min-height:100%;
+}
+.delete:hover{
+    background-color: rgb(245, 82, 82);
+    color:white;
+    transition: 0.5s;
+}
+.pop_wrap{
+  position:fixed;
+   top:0;
+    left:0;
+     right:0;
+      bottom:0;
+       background:rgba(0,0,0,.5);
+        font-size:0;
+         text-align:center;}
+.pop_wrap:after{
+  display:inline-block;
+   height:100%;
+   vertical-align:middle;
+
+   content:'';}
+.pop_wrap .pop_inner{
+  display:inline-block;
+  padding:20px 30px;
+  background:#fff;
+  width:400px;
+  height:500px;
+  vertical-align:middle;
+  font-size:15px;
+}
+.pop_inner{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+.preview_img{
+    width:100%;
+}
+.change_input{
+    width:10%;
+    border:none;
+    border-bottom:1px solid black;
+    text-align: center;
+}
+.change_button{
+    font-weight:bold;
+    margin:5px;
+     padding:4px 6px;
+      color:#050505;
+      background-color: rgb(216, 234, 238);
+      border:none;
+}
+.change_button:hover{
+    background-color: rgb(149, 202, 248);
+    color:white;
+    transition: 0.5s;
+}
+.btn_close{
+    font-weight:bold;
+    margin:5px;
+     padding:4px 6px;
+      color:#050505;
+      background-color: rgb(216, 234, 238);
+      border:none;
+}
+.btn_close:hover{
+    background-color: rgb(255, 83, 83);
+    color:white;
+    transition: 0.5s;
+}
+.price{
+    color:cadetblue;
+    font-weight: bold;
+    font-size: large;
+}
+.car_input{
+    width:50%;
+    border:none;
+    border-bottom:1px solid black;
+    text-align: center;
+}
+.car_div{
+    margin:1%;
+}
+.leaserent{
+    display: flex;
+    width:100%;
+
+}
+.lease{
+    width:50%;
+    float: left;
+    text-align: center;
+}
+.rent{
+    width: 50%;
+    float: right;
+    text-align: center;
+}
+.input-file-button{
+
+    margin:5px;
+     padding:4px 6px;
+      color:#050505;
+      background-color: rgb(216, 234, 238);
+      border:none;
+  }
+  .input-file-button:hover{
+    background-color: rgb(149, 202, 248);
+    color:white;
+    transition: 0.5s;
+}
+.car_button{
+    font-weight:bold;
+    margin:5px;
+     padding:4px 6px;
+      color:#050505;
+      background-color: rgb(216, 234, 238);
+      border:none;
+      min-width:400px
+}
+.car_button:hover{
+    background-color: rgb(149, 202, 248);
+    color:white;
+    transition: 0.5s;
+}
+
+.changenumber{
+    width:10%;
+    border:none;
+    border-bottom:1px solid black;
+    text-align: center;
+}
+.change_price_value{
+   width:10%;
+    border:none;
+    border-bottom:1px solid black;
+    text-align: center;
+}

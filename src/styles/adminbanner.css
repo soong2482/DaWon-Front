@@ -1,0 +1,162 @@
+
+
+.banner_container{
+    margin:10%;
+}
+
+  .Admin_Banner_table{
+
+    min-width:70vw;
+    max-width:70vw;
+    font-size: 0.8vw;
+    font-weight: 500;
+    
+}
+.Admin_Banner_table th{
+    border-bottom:  1px solid black;
+
+}
+.Admin_Banner_table td{
+    text-align: center;
+    border-bottom: 1px solid rgb(206, 206, 206);
+}
+.select_name{
+    text-align: center;
+}
+.banner_dawon{
+    text-align: center;
+}
+.banner_dawon img{
+    width:20vw;
+}
+.Admin_Banner_btn_open{
+    width:80%;
+    min-height:100%;
+    background-color: rgb(216, 234, 238);
+      margin:5px;
+        padding:4px 6px;
+        font-weight:bold;
+    border:none;
+}
+.Admin_Banner_btn_open:hover{
+    background-color: rgb(151, 255, 177);
+    transition: 0.5s;
+    color: white;
+}
+.Admin_Banner_btn_close{
+    width:100%;
+    background-color: rgb(216, 234, 238);
+      margin:5px;
+        padding:4px 6px;
+        font-weight:bold;
+    border:none;
+}
+.Admin_Banner_btn_close:hover{
+    background-color: rgb(255, 119, 119);
+    transition: 0.5s;
+    color:white;
+}
+.Admin_Banner_pop_wrap{
+    position:fixed;
+    top:0;
+     left:0;
+      right:0;
+       bottom:0;
+        background:rgba(0,0,0,.5);
+         font-size:0;
+          text-align:center;
+}
+.Admin_Banner_pop_wrap:after{
+    display:inline-block;
+     height:100%;
+     vertical-align:middle;
+  
+     content:'';
+    }
+
+.Admin_Banner_pop_inner img{
+        width:40vw;
+        height:55vh;
+    }
+.Admin_Banner_pop_innered img{
+        width:40vw;
+        height:55vh;
+}
+.Admin_Banner_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:40vw;
+    height:60vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_Banner_pop_innered{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:40vw;
+    height:60vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_Banner_pop_change{
+    width:80%;
+    min-height:100%;
+    background-color: rgb(216, 234, 238);
+      margin:5px;
+        padding:4px 6px;
+        font-weight:bold;
+    border:none;
+}
+.Admin_Banner_pop_change:hover{
+    background-color: rgb(85, 167, 239);
+    color:white;
+    transition: 0.5s;
+
+}
+.Admin_Banner_pop_delete{
+    color:#050505;
+     background-color: rgb(216, 234, 238);
+     border:none;
+    margin:5px;
+    padding:4px 6px;
+    font-weight:bold;
+    width:80%
+}
+.Admin_Banner_pop_delete:hover{
+    background-color: rgb(245, 82, 82);
+    color:white;
+    transition: 0.5s;
+}
+.High_Banner{
+    margin-top: 10vh;
+    min-height: 20vh;
+}
+.Center_Banner{
+    margin-top: 10vh;
+}
+.Admin_Banner_pop_ChangeOrder div{
+    min-height: 10vh;
+}
+.Admin_Banner_pop_ChangeOrder input{
+    min-width: 1vw;
+    max-width: 1vw;
+    text-align: center;
+}
+.Admin_Banner_pop_ChangeOrder_Button{
+    max-width:5vw;
+    min-width:5vw;
+    min-height: 1vw;
+    max-height: 2vw;
+    background-color: #bdbdbd;
+    border: none;
+    font-size: 0.7vw;
+    color:rgb(0, 0, 0);
+    font-weight: bold;
+}
+.Admin_Banner_pop_ChangeOrder_Button:hover{
+    transition: 0.5s;
+    background-color: rgb(155, 209, 245);
+    color:white;
+}

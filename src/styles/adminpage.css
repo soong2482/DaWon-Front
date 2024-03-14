@@ -1,0 +1,58 @@
+body{
+    background-color: rgb(254, 254, 254);
+}
+hr{
+    background-color: black;
+    height: 3px;
+    width: 100%;
+}
+.btn_open{
+    font-weight:bold;
+     margin:5px;
+      padding:4px 6px;
+      width:5vw;
+       color:#050505;
+       background-color: rgb(216, 234, 238);
+       border:none;
+  }
+.admin_container{
+    display: flex;
+    min-height: 850px;
+}
+.admin_container .sidebar{
+
+    display: flex;
+    flex-direction: column;
+}
+.admin_container .sidebar .sidetitle img{
+    max-width: 300px;
+}
+.admin_container .sidebar .sidecontent a {
+    color: inherit;
+    text-decoration: none;
+}
+.admin_container .sidebar .sidecontent li{
+    margin: 15%;
+    
+}
+.admin_container .main{
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    max-height: 1vh;
+}
+.admin_container .main .top{
+    flex-grow: 1;
+    max-height: 1vh;
+}
+.admin_container .main .main_content{
+    flex-grow: 5;
+}
+.content_title{
+    text-align: center;
+    float: center;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+

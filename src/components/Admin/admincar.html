@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/admincar.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/admincar.js" type="text/javascript" defer="defer"></script>
+  <title>Document</title>
+</head>
+
+<body>
+<div class="car_container">
+  <div class="top">
+    <img src="/img/dawonlogo.png">
+    <div class="text">차량 관리</div>
+    <h4>*차량은 17번까지만 보입니다*</h4>
+    <br>
+    <button field="pop_info_sub" class="btn_open">차량 등록</button>
+    <div id="pop_info_sub" class="pop_wrap" style="display:none;">
+      <div class="pop_inner">
+        <form id="form" action="/admincarupload" method="post" enctype="multipart/form-data">
+          <h2>차량 등록 팝업</h2>
+          <div class="leaserent">
+            <div class="lease">
+              <h4>차량 이름</h4>
+              <input class="car_input" type="text" name="car_name">
+            </div>
+            <div class="rent">
+              <h4>브랜드</h4>
+              <input class="car_input" type="text" name="car_brand">
+            </div>
+          </div>
+          <div class="leaserent">
+            <div class="lease">
+              <h4>리스 가격</h4>
+              <input class="car_input" type="text" name="car_lease_price">
+            </div>
+            <div class="rent">
+              <h4>렌트 가격</h4>
+              <input class="car_input" type="text" name="car_rent_price">
+            </div>
+          </div>
+          <h4>이미지</h4>
+          <input type="file" id="file"  name="img1" style="display:none" onchange="readURL(this)">
+          <div><label  class="input-file-button" for="file">파일 선택</label></div>
+          <img id="preview" alt="">
+          <div><button class="car_button" type="submit">업로드</button></div>
+
+        </form>
+        <button type="button"  class="btn_close">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="middle">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Number</th>
+        <th>Car_Name</th>
+        <th>Brand</th>
+        <th>Lease Price</th>
+        <th>Rent Price</th>
+        <th>이미지 확인</th>
+        <th>가격 수정</th>
+        <th>순서 변경</th>
+        <th>삭제</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="car : ${cars}" th:style="${car.car_number <18 ? 'background-color:#DFE3FF;':'background-color:white'}">
+        <td th:text="${car.car_number}">1</td>
+        <td th:text="${car.car_name}">아우디 A7</td>
+        <td th:text="${car.car_brand}">AUDI</td>
+        <td th:text="${car.car_lease_price}">월80만원</td>
+        <td th:text="${car.car_rent_price}">가격문의</td>
+        <td>   <button th:field="pop_info_img+${car.car_number}" class="btn_open">이미지 확인</button></td>
+        <div th:id="pop_info_img+${car.car_number}" class="pop_wrap" style="display:none;">
+          <div class="pop_inner">
+            <h4>이미지 확인 팝업</h4>
+            <img class="preview_img" th:src="@{/carimg?name=}+${car.car_name}" alt="">
+            <button type="button" class="btn_close">닫기</button>
+          </div>
+        </div>
+
+
+        <td><button th:field="pop_info_changeprice+${car.car_number}" class="btn_open">가격 수정</button></td>
+        <div th:id="pop_info_changeprice+${car.car_number}" class="pop_wrap" style="display:none;">
+          <div class="pop_inner">
+            <h4>가격 수정 팝업</h4>
+            <div>현재 가격(리스)</div>
+            <br>
+            <div>월 <span class="price" th:text="${car.car_lease_price}">80</span>만원</div>
+            <br>
+            <br>
+            <div>바꿀 가격(리스)</div>
+            <br>
+            <div>월 <span class="price"><input  type="text" th:class="change_price_value+${car.car_number}"/></span>만원</div>
+            <br>
+            <div><button class="change_button"  th:field="${car.car_number}" th:id="${car.id}" onclick="updateprice(this.getAttribute('id'),this.getAttribute('field'))">가격 변경</button></div>
+            <br>
+            <button type="button" class="btn_close">닫기</button>
+          </div>
+        </div>
+
+
+        <td>   <button th:field="pop_info_changeop+${car.car_number}" class="btn_open">순서 변경</button></td>
+        <div th:id="pop_info_changeop+${car.car_number}" class="pop_wrap" style="display:none;">
+          <div class="pop_inner">
+            <h4>순서 변경 팝업</h4>
+            <div>현재 순서</div>
+            <br>
+            <div class="none"><p class="p_text" th:text="${car.car_number}"></p></div>
+            <br>
+            <div>바꿀 순서</div>
+            <br>
+            <div><input th:class="changenumber+${car.car_number}"type="text"></div>
+            <br>
+            <br>
+            <div><button class="change_button"  th:field="${car.car_number}" th:id="${car.id}" onclick="changenumber(this.getAttribute('id'),this.getAttribute('field'))">순서 변경</button></div>
+
+            <br>
+            <br>
+            <button type="button" class="btn_close">닫기</button>
+          </div>
+        </div>
+        <td><button class="delete" th:field="${car.car_number}" th:id="${car.id}" onclick="remove(this.getAttribute('id'),this.getAttribute('field'))">삭제</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="board_page">
+    <a href="#" class="bt first"><<</a>
+    <a href="#" class="bt prev"><</a>
+    <a href="#" class="num on">1</a>
+    <a href="#" class="num">2</a>
+    <a href="#" class="num">3</a>
+    <a href="#" class="num">4</a>
+    <a href="#" class="num">5</a>
+    <a href="#" class="bt next">></a>
+    <a href="#" class="bt last">>></a>
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+.admincustomer_container{
+  margin:10%;
+}
+.admincustomer_DawonLogo{
+  text-align: center;
+}
+.admincustomer_DawonLogo img{
+  width:20vw;
+} 
+.admincustomer_table{
+  margin:10%;
+}
+.admincustomer_table th{
+  width:10vw;
+  text-align: center;
+  border-bottom:  0.2vw solid rgb(82, 82, 82);
+}
+.admincustomer_table td{
+  width:10vw;
+  text-align: center;
+  border-bottom:  0.05vw solid rgb(0, 0, 0);
+}
+
+.Admin_customer_review_pop_inner img{
+  width:35vw;
+  height:55vh;
+}
+
+.Admin_customer_review_btn_open{
+
+  min-height:100%;
+  background-color: rgb(216, 234, 238);
+    margin:5px;
+      padding:4px 6px;
+      font-weight:bold;
+  border:none;
+}
+.Admin_customer_review_btn_open:hover{
+  background-color: rgb(151, 255, 177);
+  transition: 0.5s;
+  color: white;
+}
+.Admin_customer_review_btn_close{
+  width:100%;
+  background-color: rgb(216, 234, 238);
+    margin:5px;
+      padding:4px 6px;
+      font-weight:bold;
+  border:none;
+}
+.Admin_customer_review_btn_close:hover{
+  background-color: rgb(255, 119, 119);
+  transition: 0.5s;
+  color:white;
+}
+.Admin_customer_review_pop_wrap{
+  position:fixed;
+  top:0;
+   left:0;
+    right:0;
+     bottom:0;
+      background:rgba(0,0,0,.5);
+       font-size:0;
+        text-align:center;
+}
+.Admin_customer_review_pop_wrap:after{
+  display:inline-block;
+   height:100%;
+   vertical-align:middle;
+
+   content:'';
+  }
+.Admin_customer_review_pop_inner{
+  display:inline-block;
+  padding:20px 30px;
+  background:#fff;
+  width:40vw;
+  height:60vh;
+  vertical-align:middle;
+  font-size:0.8vw;
+}
+.Admin_customer_review_pop_head{
+ font-size: 1.3vw;
+ font-weight: bold;
+}
+.Admin_customer_review_pop_inner div{
+  margin-top:5vh;
+}
+.Admin_customer_review_pop_inner input{
+  width:1vw;
+  text-align: center;
+}
+.Admin_customer_review_btn_Change{
+  width:5vw;
+  background-color: rgb(230, 230, 230);
+  margin-bottom: 5vh;
+  border:none;
+}
+.Admin_customer_review_btn_Change:hover{
+  background-color: rgb(160, 194, 255);
+
+  color:white;
+  transition: 0.5s;
+}
+.admincustomer_Text{
+  margin-top: 2vh;
+
+  text-align: center;
+  font-size: 1vw;
+  font-weight: bolder;
+}
+.admin_customer_Review_Insert{
+  text-align: center;
+  margin-top: 1vh;
+}
+
+.Admin_customer_review_pop_inner_Insert{
+  display:inline-block;
+  padding:20px 30px;
+  background:#fff;
+  width:50vw;
+  height:60vh;
+  vertical-align:middle;
+  font-size:0.8vw;
+}
+.Admin_customer_review_pop_Insert{
+  display: flex;
+}
+.Admin_customer_review_pop_Insert_Left{
+  width:25vw;
+
+  height:55vh;
+}
+.Admin_customer_review_pop_Insert_TextArea{
+  height:40vh;
+}
+.Admin_customer_review_pop_Insert_Title{
+  height:15vh;
+
+}
+.Admin_customer_review_pop_Insert_Title_Text{
+  font-size: 1vw;
+  text-align: left;
+  margin-left: 2vw;
+  font-weight: bolder;
+}
+.Admin_customer_review_pop_Insert_TextArea_Title{
+  font-size: 1vw;
+  text-align: left;
+  margin-left: 2vw;
+  font-weight: bolder;
+}
+.Admin_customer_review_pop_Insert_Title_Input{
+  text-align: left;
+  margin-left:2vw;
+  margin-top: 2vh;
+}
+.Admin_customer_review_pop_Insert_TextArea_Text{
+  text-align: left;
+  margin-left:2vw;
+  margin-top: 2vh;
+}
+.Admin_customer_review_pop_Insert_TextArea_Text textarea{
+  border:0.1vw solid black;;
+  min-width:20vw;
+  min-height:30vh;
+  font-size: 1.5vh;
+  resize: none;
+
+}
+.Admin_customer_review_pop_Insert_Title_Input input{
+  border:none;
+  width:20vw;
+  height:4vh;
+  font-size: 2vh;
+  border-bottom: 0.1vw solid black;
+}
+
+.Admin_customer_review_pop_Insert_Title_Input input:focus{
+  outline: none;
+
+}
+
+
+
+.Admin_customer_review_pop_Insert_Right{
+  width:25vw;
+
+  height:55vh;
+}
+.Admin_customer_review_pop_Insert_Right_IMG{
+  height:35vh;
+}
+.Admin_customer_review_pop_Insert_Right_IMG_Text{
+  text-align: left;
+  margin-left: 2vw;
+}
+.Admin_customer_review_pop_Insert_Right_IMG_Text input{
+  display: none;
+}
+.Admin_customer_review_pop_Insert_Right_IMG_Text_Text{
+  font-size: 1vw;
+  font-weight: bolder;
+}
+.Admin_customer_review_pop_Insert_Right_IMG_Text label{
+  border:none;
+
+  background-color: rgb(94, 94, 94);
+  color:rgb(197, 197, 197);
+  font-size: 0.7vw;
+}
+.Admin_customer_review_pop_Insert_Right_IMG_Text_IMG img{
+  width:20vw;
+  max-height: 30vh;
+
+}
+.Admin_customer_review_pop_Insert_Right_Bottom{
+  display: flex;
+  margin-left:2vw ;
+}
+.Admin_customer_review_pop_Insert_Right_Bottom_Left{
+ width:12vw;
+ text-align: left;
+ font-size: 1vw;
+ font-weight: bolder;
+}
+.Admin_customer_review_pop_Insert_Right_Bottom input{
+  margin-bottom: 1vh;
+  border:none;
+  width:9vw;
+  height:3vh;
+  font-size: 1.5vh;
+  border-bottom: 0.1vw solid black;
+}
+.Admin_customer_review_pop_Insert_Right_Bottom input:focus{
+  outline: none;  
+}
+.Admin_customer_review_pop_Insert_Right_Bottom_Right{
+  width:12vw;
+  text-align: left;
+  font-size: 1vw;
+  font-weight: bolder;
+}
+.Admin_customer_review_pop_Insert_Right_Bottom_Right button{
+  margin-top:2vh;
+  width:9vw;
+ 
+}
+
+.Admin_customer_review_btn_open button{
+  background-color: rgba(243, 243, 243, 0.747);
+
+  width:5vw;
+  font-size: 0.7vw;
+  font-weight: bolder;
+  height:4vh;
+}
+.admin_customer_Review_Insert button:hover{
+  background-color: rgb(179, 240, 255);
+  transition: 0.5s;
+  color:rgb(117, 117, 117);
+}
+.Admin_customer_review_pop_Insert_Right_Bottom_Right_Button button{
+  background-color: rgb(255, 255, 255);
+  height:4vh;
+}
+.pop_OUT button{
+  background-color: rgb(255, 255, 255);
+}
+.pop_OUT button:hover{
+  background-color: rgb(255, 109, 109);
+  color:white;
+  border:rgb(255, 109, 109);
+}

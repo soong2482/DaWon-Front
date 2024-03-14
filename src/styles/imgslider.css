@@ -1,0 +1,128 @@
+/* 폰트 적용 */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+/* 노말라이즈 */
+body, ul, li, h1, h2, h3, h4, h5 {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+a {
+    color:inherit;
+    text-decoration:none;
+}
+
+/* 커스텀 */
+
+/* 슬라이더 1 시작 */
+.slider-1 {
+    height:500px;
+    position:relative;
+}
+
+/* 슬라이더 1 - 페이지 버튼 */
+.slider-1 > .page-btns {
+    text-align:center;
+    position:absolute;
+    bottom:20px;
+    left:0;
+    width:100%;
+}
+
+.slider-1 > .page-btns > div {
+    width:20px;
+    height:20px;
+    background-color:rgba(255,255,255,.5);
+    border-radius:4px;
+    display:inline-block;
+    cursor:pointer;
+}
+
+.slider-1 > .page-btns > div.active {
+    background-color:rgba(255,255,255,1);
+}
+
+/* 슬라이더 1 - 슬라이드 */
+
+.slider-1 > .slides > div {
+    position:absolute;
+    background-size: cover;
+    background-position: center;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    opacity:0;
+    transition: opacity 0.3s;
+    background-position:center;
+
+    background-repeat:no-repeat;
+}
+
+.slider-1 > .slides > div.active {
+    opacity:1;
+}
+.slides img{
+    width: 100%;
+    height:100%;
+}
+
+/* 슬라이더 좌우 버튼 */
+.slider-1 > .side-btns > div {
+    position:absolute;
+    top:0;
+    left:0;
+    width:25%;
+    height:100%;
+    cursor:pointer;
+}
+.slider-1 > .side-btns > div:last-child {
+    left:auto;
+    right:0;
+}
+.slider-1 >.side-btns > div > span {
+    position:absolute;
+    top:50%;
+    left:20px;
+    transform:translatey(-50%);
+    background-color:white;
+    opacity:0.5;
+    padding:1px 13px;
+    border-radius:50px;
+    font-size:25px;
+}
+.slider-1 >.side-btns > div:last-child > span {
+    left:auto;
+    right:20px;
+}
+
+ @media (max-width: 319px) and (min-width: 220px) {
+    .slider-1{
+     max-height:180px;
+}
+ }
+@media (max-width: 400px) and (min-width: 320px) {
+     .slider-1{
+     min-height:25vh;
+     }
+}
+ @media (max-width: 699px) and (min-width: 401px) {
+      .slider-1{
+        max-height:23vh;
+        }
+ }
+ @media (max-width: 950px) and (min-width:700px) {
+             .slider-1{
+        max-height:15vh;
+        }
+ }
+ @media (max-width: 1099px) and (min-width:901px) {
+    .slider-1{
+        max-height:30vh;
+        }
+ }
