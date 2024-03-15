@@ -1,5 +1,5 @@
 import "../../styles/admincustomer.css";
-import React, {useState,useEffect,useLayoutEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import {openPopup,closePopup,CustomerChangeOrder,DeleteCustomerReview,InsertCustomerReview} from "../../services/AdminCustomerJS";
 import DaWonLogo from "../../assets/dawonlogo.png";
 

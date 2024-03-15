@@ -1,266 +1,416 @@
-.car_container{
-    margin:10%;
-
-}
-.top{
-    text-align: center;
-}
-.top img{
-    width:30%;
-}
-.middle{
-    display: flex;
-    flex-direction: row;
-    max-width: 100%;
-    min-width: 100%;
+.Admin_Car_Container{
     margin:5%;
 }
-.table{
-    min-width:100%;
-    max-width: 100%;
-}
-.table th{
-    border-bottom:  1px solid black;
-
-}
-.table td{
-    text-align: center;
-    border-bottom: 1px solid rgb(206, 206, 206);
-}
-.board_page{
+.Admin_Car_DawonLogo{
     text-align: center;
 }
-.board_page a{
-    text-decoration: none;
-    color:black;
-      display: inline-block;
-    width: 32px;
-    height: 32px;
-    box-sizing: border-box;
-    vertical-align: middle;
-    border: 1px solid #ddd;
-    border-left: 0;
-    line-height: 100%;
-    font-weight: lighter;
+.Admin_Car_DawonLogo img{
+    width:25vw;
 }
-.board_page a:hover{
-    background-color: black;
-    color:azure;
+.Admin_Car_Example_Text{
+    margin-top: 3vh;
+    text-align: center;
+}
+.Admin_Car_Insert_Button{
+    margin-top: 4vh;
+    text-align: center;
+}
+.Admin_Car_Insert_Button{
+    width:15vw;
+    height:5vh;
+    background-color: rgba(255, 255, 255, 0.979);
+    font-weight: bold;
+    font-size: 0.8vw;
+}
+.Admin_Car_Insert_POP{
+    text-align: center;
+}
+.Admin_Car_Insert_Button:hover{
+    background-color: rgb(93, 157, 214);
     transition: 0.5s;
+    color:white;
+    border:none
 }
-.board_page a.bt {
-    padding-top: 8px;
-    font-size: 1rem;
-    letter-spacing: -1px;
+.admincar_table{
+    margin-top:7vh;
+    width:75vw;
+    margin-left: -1vw;
+    
 }
-
-.board_page a.num {
-    padding-top: 8px;
-    font-size:  1rem;
+.admincar_table th{
+    border-bottom: 0.2vw solid black;
 }
-.board_page a:first-child {
-    border-left: 1px solid #ddd;
-}
-.board_page {
-    margin-top: 30px;
+tbody tr td{
     text-align: center;
-    font-size: 0;
 }
-.success{
-    width:100%;
-    min-height:100%;
+.Admin_car_list_pop_wrap{
+    position:fixed;
+    top:0;
+     left:0;
+      right:0;
+       bottom:0;
+        background:rgba(0,0,0,.5);
+         font-size:0;
+          text-align:center;
+}
+.Admin_car_list_pop_wrap:after{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+ 
+    content:'';
+}
+.Admin_car_img_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:40vw;
+    height:60vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_img_pop_inner img{
+    width:40vw;
+    height:55vh;
+}
+.Admin_car_list_btn_close{
+    color:#050505;
     background-color: rgb(216, 234, 238);
     border:none;
-}
-.success:hover{
-    background-color: rgb(85, 167, 239);
-    color:white;
-    transition: 0.5s;
-}
-.delete{
-    width:100%;
-    background-color: rgb(216, 234, 238);
-    border: none;
-}
-.delete:hover{
-    background-color: rgb(244, 60, 60);
-    color:white;
-    transition: 0.5s;
-}
-  .popup_show{
-    opacity: 1;
-    z-index:1000;
-    transition: all 1s;
-    margin:5%;
-    border:2px solid black;
-
-}
-a{text-decoration:none;}
-.wrap{
-  margin:1%;
-  text-align: center;
-}
-.btn_open{
-  font-weight:bold;
    margin:5px;
-    padding:4px 6px;
-     color:#050505;
-     background-color: rgb(216, 234, 238);
-     border:none;
+   padding:4px 6px;
+   font-weight:bold;
+   width:80%
 }
-.btn_open:hover{
-    background-color: rgb(85, 167, 239);
-    color:white;
-    transition: 0.5s;
-}
-.delete{
-    color:#050505;
-     background-color: rgb(216, 234, 238);
-     border:none;
-    margin:5px;
-    padding:4px 6px;
-    font-weight:bold;
-    width:100%;
-    min-height:100%;
-}
-.delete:hover{
+.Admin_car_list_btn_close:hover{
     background-color: rgb(245, 82, 82);
     color:white;
     transition: 0.5s;
 }
-.pop_wrap{
-  position:fixed;
-   top:0;
-    left:0;
-     right:0;
-      bottom:0;
-       background:rgba(0,0,0,.5);
-        font-size:0;
-         text-align:center;}
-.pop_wrap:after{
-  display:inline-block;
-   height:100%;
-   vertical-align:middle;
-
-   content:'';}
-.pop_wrap .pop_inner{
-  display:inline-block;
-  padding:20px 30px;
-  background:#fff;
-  width:400px;
-  height:500px;
-  vertical-align:middle;
-  font-size:15px;
+.Admin_Car_pop_open_Button{
+    width:80%;
+    min-height:100%;
+    background-color: rgb(216, 234, 238);
+      margin:5px;
+        padding:4px 6px;
+        font-weight:bold;
+    border:none;
 }
-.pop_inner{
+.Admin_Car_pop_open_Button:hover{
+    background-color: rgb(80, 212, 113);
+    transition: 0.5s;
+    color: white;
+}
+.Admin_car_insert_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:30vw;
+    height:50vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_insert_pop_container{
     display: flex;
     flex-direction: row;
 }
-
-
-
-
-.preview_img{
-    width:100%;
+.Admin_car_insert_pop_container_left{
+    height:45vh;
 }
-.change_input{
-    width:10%;
+.Admin_car_insert_Left_inner{
+    margin:1vw;
+    margin-bottom:5vh;
+}
+.Admin_car_insert_Title{
+    text-align: left;
+    font-weight: bolder;
+    font-size: 0.8vw;
+}
+.Admin_car_insert_Input{
+    margin-top: 1vh;
+    margin-left: 1vw;
+}
+.Admin_car_insert_Input input{
+    width:10vw;
     border:none;
-    border-bottom:1px solid black;
-    text-align: center;
+    font-size: 1.5vh;
+    border-bottom: 0.1vw solid black;
 }
-.change_button{
-    font-weight:bold;
-    margin:5px;
-     padding:4px 6px;
-      color:#050505;
-      background-color: rgb(216, 234, 238);
-      border:none;
+.Admin_car_insert_Input input:focus{
+    outline: none;
 }
-.change_button:hover{
-    background-color: rgb(149, 202, 248);
+.Admin_car_insert_Car_Rent:focus{
+    caret-color: transparent;
+}
+.Admin_car_insert_Input select{
+    width:10vw;
+}
+.Admin_car_Insert_IMG{
+    margin-left: 2vw;
+    width:14vw;
+    height:25vh;
+}
+#imageUpload{
+    display: none;
+}
+.Admin_car_select_Img{
+    text-align: left;
+    margin-left:1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+.Admin_car_select_Img label{
+    font-size: 0.7VW;
     color:white;
+    background-color: rgb(151, 193, 255);
+    border:0.2vw solid rgb(151, 193, 255);
+
+}
+.Admin_car_select_Img label:hover{
+    color:black;
     transition: 0.5s;
 }
-.btn_close{
-    font-weight:bold;
-    margin:5px;
-     padding:4px 6px;
-      color:#050505;
-      background-color: rgb(216, 234, 238);
-      border:none;
+.Admin_car_submit_Button{
+    margin-top: 2vh;
 }
-.btn_close:hover{
-    background-color: rgb(255, 83, 83);
+.Admin_car_submit_Button button{
+    width:14vw;
+    height:5vh;
+    background-color: white;
+    font-size: 1.2vw;
+    font-weight: bolder;
+    margin-left:2vw;
+}
+.Admin_car_submit_Button button:hover{
     color:white;
+    background-color: rgb(62, 104, 167);
+
     transition: 0.5s;
 }
-.price{
-    color:cadetblue;
-    font-weight: bold;
-    font-size: large;
+.Admin_car_trim_option_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:60vw;
+    height:70vh;
+    vertical-align:middle;
+    font-size:0.8vw;
 }
-.car_input{
-    width:50%;
-    border:none;
-    border-bottom:1px solid black;
-    text-align: center;
+.Admin_car_to_Select{
+    font-weight: bolder;
+    font-size: 1.4vw;
 }
-.car_div{
-    margin:1%;
-}
-.leaserent{
+.Admin_car_to_container{
     display: flex;
-    width:100%;
+    margin-top: 4vh;
+}
+.Admin_car_trim_List{
+    width:27vw;
+    margin-left: 3vw;
+    height:60vh;
+    border-right: 0.15vw solid black;
 
 }
-.lease{
-    width:50%;
-    float: left;
-    text-align: center;
+.Admin_car_option_List{
+    width:27vw;
+    margin-left: 3vw;
 }
-.rent{
-    width: 50%;
-    float: right;
-    text-align: center;
+.Admin_car_to_Title{
+    text-align: left;
+    font-size: 1.5vw;
+    font-weight: bolder;
 }
-.input-file-button{
-
-    margin:5px;
-     padding:4px 6px;
-      color:#050505;
-      background-color: rgb(216, 234, 238);
-      border:none;
-  }
-  .input-file-button:hover{
-    background-color: rgb(149, 202, 248);
-    color:white;
+.Admin_car_to_insert_button{
+    margin-top: -3vh;
+}
+.Admin_car_option_table{
+    width:26vw;
+    margin-top: 3vh;
+}
+.Admin_car_option_table td{
+    border-bottom: 0.1vw solid black;
+    font-size: 0.7vw;
+}
+.Admin_car_trim_table{
+    width:26vw;
+    margin-top: 3vh;
+}
+.Admin_car_trim_table td{
+    border-bottom: 0.1vw solid black;
+    font-size: 0.7vw;
+}
+.Admin_car_to_alter_button{
+    background-color: white;
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+.Admin_car_to_alter_button:hover{
+    background-color: rgb(140, 224, 250);
     transition: 0.5s;
-}
-.car_button{
-    font-weight:bold;
-    margin:5px;
-     padding:4px 6px;
-      color:#050505;
-      background-color: rgb(216, 234, 238);
-      border:none;
-      min-width:400px
-}
-.car_button:hover{
-    background-color: rgb(149, 202, 248);
     color:white;
+    border: 0.15vw solid rgb(147, 212, 231);
+}
+.selected-trim {
+    background-color: rgb(159, 198, 243); /* 배경색을 적절한 색상으로 변경하세요 */
+}
+.Admin_car_to_delete_button{
+    background-color: #e4f3ff;
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+.Admin_car_to_delete_button:hover{
+    background-color: rgb(250, 56, 56);
     transition: 0.5s;
+    color:white;
+    border: 0.15vw solid rgb(250, 56, 56);
+}
+.Admin_car_alter_price_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:30vw;
+    height:40vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_alter_option_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:30vw;
+    height:40vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_alter_price_pop_inner div{
+    margin-top:4vh;
 }
 
-.changenumber{
-    width:10%;
-    border:none;
-    border-bottom:1px solid black;
-    text-align: center;
+.Admin_car_alter_price_pop_inner input{
+    width:3vw;
+    text-align: left;
 }
-.change_price_value{
-   width:10%;
-    border:none;
-    border-bottom:1px solid black;
-    text-align: center;
+
+.Alter_Trim_Price_Button{
+    width:5vw;
+    background-color: rgb(207, 229, 255);
+    font-size: 0.8vw;
+    font-weight: bolder;
+}
+.Alter_Option_Price_Button{
+    width:5vw;
+    background-color: rgb(207, 229, 255);
+    font-size: 0.8vw;
+    font-weight: bolder;
+}
+.Alter_Trim_Price_Button:hover{
+    background-color: rgb(50, 142, 255);
+    border:0.15vw solid rgb(50, 142, 255);
+    transition: 0.5s;
+    color:white;
+}
+.Alter_Option_Price_Button:hover{
+    background-color: rgb(50, 142, 255);
+    border:0.15vw solid rgb(50, 142, 255);
+    transition: 0.5s;
+    color:white;
+}
+.Admin_car_insert_trim_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:15vw;
+    height:20vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_insert_option_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:15vw;
+    height:20vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_to_insert_Bu {
+    background-color: white;
+    font-size: 1vw;
+    font-weight: bolder;
+}
+.Admin_car_to_insert_Bu:hover{
+    background-color: rgb(147, 212, 231);
+    transition: 0.5s;
+    color:white;
+    border: 0.15vw solid rgb(147, 212, 231);
+}
+.Admin_car_insert_trim_container{
+    display: flex;
+}
+.Admin_car_insert_option_container{
+    display: flex;
+}
+
+.Admin_car_insert_option_right input{
+    width:10vw;
+    height:0.7vw;
+    font-size: 0.6vw;
+}
+.Admin_car_insert_trim_left div{
+    margin-top: 2vh;
+    font-size: 0.8vw;
+}
+.Admin_car_insert_option_left div{
+    margin-top: 2vh;
+    font-size: 0.8vw;
+}
+.Admin_car_insert_trim_right div{
+    margin-top: 2vh;
+}
+.Admin_car_insert_option_right div{
+    margin-top:2vh;
+}
+.Admin_car_insert_trim_right input{
+    width:10vw;
+    height:0.7vw;
+    font-size: 0.6vw;
+}
+.Inser_Option_Submit_Button{
+    margin-top: 2vh;
+    width:3vw;
+    background-color: rgb(226, 245, 255);
+    font-weight: bolder;
+    font-size: 0.8vw;
+    color:black;
+}
+.Inser_Option_Submit_Button:hover{
+    border:0.15vw solid rgb(156, 210, 255);
+    background-color: rgb(156, 210, 255);
+    transition: 0.5s;
+    color:white;
+}
+.Inser_Trim_Submit_Button{
+    margin-top: 2vh;
+    width:3vw;
+    background-color: rgb(226, 245, 255);
+    font-weight: bolder;
+    font-size: 0.8vw;
+    color:black;
+}
+.Inser_Trim_Submit_Button:hover{
+    border:0.15vw solid rgb(156, 210, 255);
+    background-color: rgb(156, 210, 255);
+    transition: 0.5s;
+    color:white;
+}
+.Admin_car_option_select_button{
+    background-color: rgb(193, 237, 255);
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+.Admin_car_option_select_button:hover{
+    background-color: rgb(20, 88, 167);
+    border:0.15vw solid rgb(20, 88, 167);
+    transition: 0.5s;
+    color:white;
 }

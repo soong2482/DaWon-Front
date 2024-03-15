@@ -5,6 +5,7 @@ import AdminFastinquired from "../../components/Admin/Adminfastinquired";
 import AdminInquired from "../../components/Admin/Admininquired";
 import AdminBanner from "../../components/Admin/Adminbanner";
 import AdminCustomer from "../../components/Admin/AdminCustomer";
+import AdminCar from "../../components/Admin/AdminCar";
 function AdminHome(){
     const [page,setPage] =useState(null);
     
@@ -28,7 +29,7 @@ function AdminHome(){
                     <br/>
     
                     <div className="sidecontent_title">차량</div>
-                    <li className="alter_car">차량 관리(수정,삭제)</li>
+                    <li className="alter_car" onClick={() => rendering(<AdminCar/>)}>차량 관리(수정,삭제)</li>
     
                     <hr/>
                     <br/>
