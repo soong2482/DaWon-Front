@@ -14,8 +14,20 @@ import call_img from "../assets/call_img.jpg";
 import talk_img from "../assets/talk_img.jpg";
 import inquired_img from "../assets/inquired_img.jpg";
 import dawonlogo from "../assets/dawonlogo.png";
+import axios from 'axios';
 function Home(){
+  const [CenterBanner,setCenterBanner] = useState([]);
     useEffect(() => {
+      const fetchDataCenterBannerList = async() =>{
+        try{
+            const response = await axios.get('DaWonCar/CenterBanner');
+            setCenterBanner(response.data);
+
+        } catch(error){ 
+            console.error('데이터를 불러오는 도중 오류 발생:', error);
+        }
+    }
+    fetchDataCenterBannerList();
         HomeJS();
     },[]);
     return(
@@ -166,7 +178,11 @@ function Home(){
            </div>
            <div className="home-third">
              <div id="centerbanner">
-          </div>
+              {CenterBanner.map((CenterBanner,index)=>(
+               <img id="CenterBannerIMG" src={"/IMG"+CenterBanner.centerBannerImgURL} alt="x"></img>
+              ))}
+
+            </div>
           <div className="home-forth">
              <div className="customer_review">
                <div className="review_top">

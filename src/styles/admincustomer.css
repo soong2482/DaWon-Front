@@ -8,12 +8,15 @@
   width:20vw;
 } 
 .admincustomer_table{
-  margin:10%;
+  margin:7%;
 }
 .admincustomer_table th{
   width:10vw;
   text-align: center;
   border-bottom:  0.2vw solid rgb(82, 82, 82);
+}
+#TextArea_Change{
+  width:36vw;
 }
 .admincustomer_table td{
   width:10vw;
@@ -36,6 +39,20 @@
   border:none;
 }
 .Admin_customer_review_btn_open:hover{
+  background-color: rgb(151, 255, 177);
+  transition: 0.5s;
+  color: white;
+}
+.ChangeInTextButton{
+  height:5vh;
+  width:39.4vw;
+  background-color: rgb(216, 234, 238);
+    margin:5px;
+      padding:4px 6px;
+      font-weight:bold;
+  border:none;
+}
+.ChangeInTextButton:hover{
   background-color: rgb(151, 255, 177);
   transition: 0.5s;
   color: white;

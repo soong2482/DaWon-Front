@@ -16,6 +16,22 @@
     border-bottom:  1px solid black;
 
 }
+.Admin_Banner_Insert_Button_container{
+    text-align: center;
+}
+.Admin_Banner_Insert_Button{
+    width:10vw;
+    height: 4vh;
+    background-color: rgb(255, 255, 255);
+    font-size: 1vw;
+    font-weight: bolder;
+}
+.Admin_Banner_Insert_Button:hover{
+    transition: 0.5s;
+    background-color: rgb(110, 164, 201);
+    border:none;
+    color:white;
+}
 .Admin_Banner_table td{
     text-align: center;
     border-bottom: 1px solid rgb(206, 206, 206);
@@ -75,12 +91,14 @@
     }
 
 .Admin_Banner_pop_inner img{
+    margin-top: 10vh;
         width:40vw;
-        height:55vh;
+        height:30vh;
     }
 .Admin_Banner_pop_innered img{
-        width:40vw;
-        height:55vh;
+    margin-top: 10vh;
+    width:40vw;
+    height:30vh;
 }
 .Admin_Banner_pop_inner{
     display:inline-block;
@@ -91,6 +109,7 @@
     vertical-align:middle;
     font-size:0.8vw;
 }
+
 .Admin_Banner_pop_innered{
     display:inline-block;
     padding:20px 30px;
@@ -159,4 +178,76 @@
     transition: 0.5s;
     background-color: rgb(155, 209, 245);
     color:white;
+}
+.Admin_Banner_Insert_Container{
+    display: flex;
+    flex-direction: row;
+}
+.Admin_Banner_insert_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:30vw;
+    height:40vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_Banner_Insert_Title{
+    text-align: left;
+    font-weight: bolder;
+    font-size: 1vw;
+    margin-left:1vw;
+}
+.Admin_Banner_Input input{
+
+    font-size: 1vw;
+    margin-left:2vw;
+    margin-top: 1vh;
+    border:none;
+    border-bottom: 0.15vw solid black;
+    outline: none;
+}
+.Admin_car_insert_Brand_Select{
+    font-size: 1vw;
+    margin-left:2vw;
+    margin-top: 1vh;
+    border:none;
+    border-bottom: 0.15vw solid black;
+    outline: none;
+}
+.Admin_Banner_Insert_IMG img{
+    width:30vw;
+    height:20vh;
+    margin-top: 1vh;
+}
+.Admin_Banner_insert_IMG_Button{
+    display: flex;
+    flex-direction: row;
+}
+.Admin_Banner_insert_IMG_Button label{
+  text-align: left;
+  margin-left: 1vw;
+  background-color: rgb(243, 251, 255);
+  margin-top: 2vh;
+  font-weight: bolder;
+  border:0.15vw solid black;
+}
+.Admin_Banner_insert_IMG_Button label:hover{
+    background-color: rgb(60, 111, 170);
+    transition: 0.5s;
+    color:white;
+}
+.Admin_Banner_Insert_Button_Push{
+    width:15vw;
+    height:4vh;
+    background-color: #a6d1ee;
+    border:0.15vw solid #a6d1ee;
+    font-size: 0.8vw;
+    font-weight: bolder;
+}
+.Admin_Banner_Insert_Button_Push:hover{
+    background-color: #437ea5;
+    border:0.15vw solid #437ea5;
+    color:white;
+    transition: 0.5s;
 }

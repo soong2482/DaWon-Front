@@ -48,8 +48,8 @@ function Adminfastinquired(){
                         <td>{fastinquired.customerFPhone}</td>
                         <td>{fastinquired.customerFBrand}</td>
                         <td>{fastinquired.customerFCarSort}</td>
-                        <td>{fastinquired.customerFAuth}</td>
-                        <td>{fastinquired.customerFSuccess}</td>
+                        <td>{fastinquired.customerFAuth ? "O" : "X"}</td>
+                        <td>{fastinquired.customerFSuccess ? "O" : "X"}</td>
                         <td>{fastinquired.customerFDate}</td>
                         <td><button className="Admin_FastInquired_success" id={fastinquired.customerFId}
                          onClick={() => done(fastinquired.customerFId)}>완료</button></td>

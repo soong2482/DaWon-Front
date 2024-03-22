@@ -59,7 +59,10 @@ button, html [type="button"] {
     width:30%;
     border: 1px solid #b2b8b8;
 }
-
+#CenterBannerIMG{
+    width:100vw;
+    height:60vh;
+}
 #header{
     position: sticky;
     top:1px;
@@ -291,8 +294,8 @@ background-size:cover;
 
     border: 5px solid rgb(149, 188, 244);
     margin:2%; 
-    min-height:645px;
-    max-height:645px;
+    min-height:70vh;
+    max-height:70vh;
     align-items: left;
     text-align: center;
     justify-content: left;

@@ -19,13 +19,13 @@ function Admininquired(){
         
         },[]);
         return(
-            <div class="inquired_container">
-                <div class="inquired_container_top">
+            <div className="inquired_container">
+                <div className="inquired_container_top">
                     <img src={DawonLogo}/>
-                    <div class="text">문의 관리</div>
+                    <div className="text">문의 관리</div>
                 </div>
-                <div class="inquired_container_middle">
-                    <table class="inquired_container_table">
+                <div className="inquired_container_middle">
+                    <table className="inquired_container_table">
                         <thead>
                         <tr>
                             <th>ID</th>
@@ -48,11 +48,11 @@ function Admininquired(){
                                 <td>{inquired.customerId}</td>
                                 <td>{inquired.customerName}</td>
                                 <td>{inquired.customerPhone}</td>
-                                <td>{inquired.cusotmerChoice}</td>
+                                <td>{inquired.customerChoice}</td>
                                 <td>{inquired.customerRegion}</td>
                                 <td>{inquired.customerCarSort}</td>
-                                <td>{inquired.customerAuth}</td>
-                                <td>{inquired.customerSuccess}</td>
+                                <td>{inquired.customerAuth ? "O" : "X"}</td>
+                                <td>{inquired.customerSuccess ? "O" : "X"}</td>
                                 <td>{inquired.customerDate}</td>
                                 <td>
                                     <button field="inquired_container_pop_info_detail" onClick={()=> open(inquired.customerId)} className='inquired_container_btn_open'>내용 확인</button>

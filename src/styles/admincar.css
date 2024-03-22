@@ -324,12 +324,25 @@ tbody tr td{
     vertical-align:middle;
     font-size:0.8vw;
 }
+#Change_Value_Trim{
+    width:6vw;
+    text-align: center;
+}
 .Admin_car_insert_option_pop_inner{
     display:inline-block;
     padding:20px 30px;
     background:#fff;
     width:15vw;
     height:20vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_alter_order_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:15vw;
+    height:30vh;
     vertical-align:middle;
     font-size:0.8vw;
 }
@@ -343,6 +356,10 @@ tbody tr td{
     transition: 0.5s;
     color:white;
     border: 0.15vw solid rgb(147, 212, 231);
+}
+#Change_Option_Value{
+    text-align: center;
+    width:6vw;
 }
 .Admin_car_insert_trim_container{
     display: flex;
@@ -374,6 +391,27 @@ tbody tr td{
     width:10vw;
     height:0.7vw;
     font-size: 0.6vw;
+}
+.Admin_car_alter_order_pop_inner input{
+    width:1vw;
+    height:2vh;
+    text-align: center;
+}
+.Admin_car_alter_order_pop_inner div{
+    margin-top: 1vh;
+}
+#Now_Car_Order{
+    border:none;
+    pointer-events: none;
+}
+#Now_Car_Lease_Price{
+    border:none;
+    pointer-events: none;
+    width:10vw;
+}
+#Change_Lease_Price_Car{
+    width:5vw;
+    
 }
 .Inser_Option_Submit_Button{
     margin-top: 2vh;
@@ -413,4 +451,168 @@ tbody tr td{
     border:0.15vw solid rgb(20, 88, 167);
     transition: 0.5s;
     color:white;
+}
+
+.Admin_Car_RecommendCar_Button{
+    width:100%;
+    background-color:  rgb(216, 234, 238);
+    border:0.15vw solid rgb(216, 234, 238);
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+.Admin_Car_RecommendCar_Button:hover{
+    transition: 0.5s;
+    color:white;
+    background-color: rgb(96, 48, 136);
+}
+.Admin_Car_ChangePrice_Button{
+    width:100%;
+    background-color:  rgb(216, 234, 238);
+    border:0.15vw solid rgb(216, 234, 238);
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+.Admin_Car_ChangePrice_Button:hover{
+    transition: 0.5s;
+    color:white;
+    background-color: rgb(253, 173, 24);
+}
+.Admin_Car_ChangeOrder_Button{
+    width:100%;
+    background-color:  rgb(216, 234, 238);
+    border:0.15vw solid rgb(216, 234, 238);
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+.Admin_Car_ChangeOrder_Button:hover{
+    transition: 0.5s;
+    color:white;
+    background-color: rgb(113, 156, 11);
+}
+.Admin_Car_Delete_Button{
+    width:100%;
+    background-color:  rgb(216, 234, 238);
+    border:0.15vw solid rgb(216, 234, 238);
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+
+.Admin_Car_Delete_Button:hover{
+    transition: 0.5s;
+    color:white;
+    background-color: red;
+}
+
+
+.Car_Brand_Insert{
+    text-align: right;
+    margin-right: 10vw;
+}
+.Car_Brand_Insert_Button{
+    width:10vw;
+    height:5vh;
+    background-color:  rgb(216, 234, 238);
+    border:0.15vw solid rgb(216, 234, 238);
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+.Car_Brand_Insert_Button:hover{
+    transition: 0.5s;
+    color:white;
+    background-color: rgb(52, 65, 126);
+}
+.Admin_car_brand_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:20vw;
+    height:80vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.adminbrand_table{
+    margin-top:3vh;
+    width:20vw;
+    margin-left: -1vw;
+}
+.adminbrand_table th{
+    border-bottom: 0.2vw solid black;
+}
+.adminbrand_table td{
+    border-bottom: 0.1vw solid black;
+}
+.adminbrand_insert_Button{
+    width:10vw;
+    height:5vh;
+    background-color:  rgb(216, 234, 238);
+    border:0.15vw solid rgb(216, 234, 238);
+    font-size: 0.7vw;
+    font-weight: bolder;
+}
+.adminbrand_insert_Button:hover{
+    transition: 0.5s;
+    color:white;
+    background-color: rgb(52, 65, 126);
+}
+.Admin_car_brand_insert_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:20vw;
+    height:50vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_brand_insert_Text{
+    text-align: left;
+    margin-left: 1vw;
+    font-weight: bolder;
+    font-size: 0.9vw;
+    margin-top: 2vh;
+}
+#Admin_Car_brand_inserT_input{
+    outline: none;
+    border:none;
+    border-bottom:0.15vw solid black;
+    width:14vw;
+    text-align: left;
+    margin-top: 2vh;
+    margin-left: -2vw;
+}
+
+#imageUploadBrand{
+    display: none;
+}
+.Admin_car_Insert_Brand_IMG {
+    width:16vw;
+    height:20vh;
+}
+#margin-top{
+    margin-top: 2vh;
+    text-align: left;
+    margin-left: 2vw;
+}
+.Admin_car_brand_insert_IMG_SELECT{
+    background-color: rgb(190, 190, 190);
+    color:white;
+    border:0.15vw solid rgb(190, 190, 190)
+}
+.Admin_car_brand_insert_IMG_SELECT:hover{
+    background-color: rgb(31, 70, 116);
+    transition: 0.6s;
+    border:0.15vw solid rgb(31, 70, 116);
+    color:white;
+}
+.InputInsertBrandButton button{
+    width:16vw;
+    height:4vh;
+    font-size: 0.7vw;
+    font-weight: bolder;
+    background-color:rgb(211, 210, 210) ;
+    border:none;
+}
+.InputInsertBrandButton button:hover{
+    transition: 0.6s;
+    color: white;
+    background-color:rgb(57, 75, 136) ;
 }

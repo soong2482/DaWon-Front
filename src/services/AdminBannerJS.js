@@ -41,25 +41,16 @@ export async function deleteHomeBanner(id){
           });
           if(response.ok){
           alert("삭제 되었습니다");
-          setTimeout(function() {
-            alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-        }, 1000);
-          window.location.href = "/adminHome";
+          window.location.href = "/adminHome?page=AdminBanner";
           }
           else{
               alert("삭제 중에 오류가 발생했습니다.");
-              setTimeout(function() {
-                alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-            }, 1000);
-              window.location.href = "/adminHome";
+              window.location.href = "/adminHome?page=AdminBanner";
           }
       } catch (error) {
           console.error("Error:", error);
           alert("삭제 중에 오류가 발생했습니다.");
-          setTimeout(function() {
-            alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-        }, 1000);
-          window.location.href = "/adminHome";
+          window.location.href = "/adminHome?page=AdminBanner";
       }
   }
 }
@@ -89,26 +80,17 @@ var homeBannerCode= gethomeBannerCode(order);
            });
            if(response.ok){
            alert("변경 되었습니다");
-           setTimeout(function() {
-            alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-        }, 1000);
-           window.location.href = "/adminHome";
+           window.location.href = "/adminHome?page=AdminBanner";
 
            }
            else{
                alert("변경 중에 오류가 발생했습니다.");
-               setTimeout(function() {
-                alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-            }, 1000);
-               window.location.href = "/adminHome";
+               window.location.href = "/adminHome?page=AdminBanner";
            }
        } catch (error) {
            console.error("Error:", error);
            alert("변경 중에 오류가 발생했습니다.");
-           setTimeout(function() {
-            alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-        }, 1000);
-           window.location.href = "/adminHome";
+           window.location.href = "/adminHome?page=AdminBanner";
        }
    }
  
@@ -138,25 +120,16 @@ export async function deleteCenterBanner(id){
           });
           if(response.ok){
           alert("삭제 되었습니다");
-          setTimeout(function() {
-            alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-        }, 1000);
-          window.location.href = "/adminHome";
+          window.location.href = "/adminHome?page=AdminBanner";
           }
           else{
               alert("삭제 중에 오류가 발생했습니다.");
-              setTimeout(function() {
-                alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-            }, 1000);
-              window.location.href = "/adminHome";
+              window.location.href = "/adminHome?page=AdminBanner";
           }
       } catch (error) {
           console.error("Error:", error);
           alert("삭제 중에 오류가 발생했습니다.");
-          setTimeout(function() {
-            alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-        }, 1000);
-          window.location.href = "/adminHome";
+          window.location.href = "/adminHome?page=AdminBanner";
       }
   }
 }
@@ -178,26 +151,59 @@ export async function changelook(id){
           });
           if(response.ok){
           alert("변경 되었습니다");
-          setTimeout(function() {
-            alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-        }, 1000);
-          window.location.href = "/adminHome";
+          window.location.href = "/adminHome?page=AdminBanner";
           }
           else{
             
               alert("변경 중에 오류가 발생했습니다.");
-              setTimeout(function() {
-                alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-            }, 1000);
-              window.location.href = "/adminHome";
+              window.location.href = "/adminHome?page=AdminBanner";
           }
       } catch (error) {
           console.error("Error:", error);
           alert("변경 중에 오류가 발생했습니다.");
-          setTimeout(function() {
-            alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-        }, 1000);
-          window.location.href = "/adminHome";
+          window.location.href = "/adminHome?page=AdminBanner";
+      }
+  }
+}
+export async function InsertBanner(){
+  const img = document.getElementById('imageUpload');
+  const Sort = document.querySelector(".Admin_car_insert_Brand_Select").value;
+  const BannerName = document.getElementById('Admin_Banner_Input_Name').value;
+  const formData = new FormData();
+  if(Sort==="CenterBanner"){
+    const Center_Banner_IMG = img.files[0];
+    const Center_Banner_Name=BannerName;
+    formData.append('Center_Banner_IMG',Center_Banner_IMG);
+    formData.append('Center_Banner_Name',Center_Banner_Name);
+  }
+  if(Sort==="HomeBanner"){
+     const Home_Banner_IMG = img.files[0];
+     const Home_Banner_Name=BannerName;
+     formData.append('Home_Banner_IMG',Home_Banner_IMG);
+     formData.append('Home_Banner_Name',Home_Banner_Name);
+  }
+  /* eslint-disable no-restricted-globals */
+  var returnValue = confirm('등록 하시겠습니까?');
+  /* eslint-enable no-restricted-globals */
+  if (returnValue == true) {
+      try {
+          const response = await fetch("/DaWonCar/Admin/Insert/"+Sort, {
+              method: "POST",
+              body:formData
+          });
+          if(response.ok){
+          alert("등록 되었습니다");
+          window.location.href = "/adminHome?page=AdminBanner";
+          }
+          else{
+            
+              alert("등록 중에 오류가 발생했습니다.");
+     
+          }
+      } catch (error) {
+          console.error("Error:", error);
+          alert("등록 중에 오류가 발생했습니다.");
+
       }
   }
 }

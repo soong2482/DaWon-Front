@@ -5,7 +5,7 @@ import '../styles/cardetail.css';
 import call_img from "../assets/call_img.jpg";
 import talk_img from "../assets/talk_img.jpg";
 import inquired_img from "../assets/inquired_img.jpg";  
-import DetailBanner from "../assets/Homebanner/Home_banner3.png";
+import DetailBanner from "../assets/center_banner2.png";
 import Fotter from '../hooks/Fotter';
 import AUDI from '../assets/logo/AUDI.png'
 import CarDetailJS from '../services/CarDetailJS';

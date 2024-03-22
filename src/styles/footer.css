@@ -88,6 +88,8 @@ html, body{
     font-size: large;
     font-weight: bold;
     width:100vw;
+    margin-left: -1vw;
+    margin-bottom: -1vh;
 }
 .footer_container .btn_open .footer_second_first{
     flex-grow:1;

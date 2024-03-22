@@ -16,11 +16,11 @@ export async function done(id){
             });
             if(response.ok){
                 alert("완료 처리 되었습니다");
-                window.location.href = "/adminHome";
+                window.location.href = "/adminHome?page=AdminFastInquired";
                 }
                 else{
                     alert("변경 중에 오류가 발생했습니다.");
-                    window.location.href = "/adminHome";
+                    window.location.href = "/adminHome?page=AdminFastInquired";
                 }
         }catch(error) {
             console.error("Error:", error);
@@ -47,16 +47,16 @@ export async function done(id){
             });
             if(response.ok){
             alert("삭제 되었습니다");
-            window.location.href = "/adminHome";
+            window.location.href = "/adminHome?page=AdminFastInquired";
             }
             else{
                 alert("삭제 중에 오류가 발생했습니다.");
-                window.location.href = "/adminHome";
+                window.location.href = "/adminHome?page=AdminFastInquired";
             }
         } catch (error) {
             console.error("Error:", error);
             alert("삭제 중에 오류가 발생했습니다.");
-            window.location.href = "/adminHome";
+            window.location.href = "/adminHome?page=AdminFastInquired";
         }
     }
 }

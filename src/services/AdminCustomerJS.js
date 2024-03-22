@@ -36,26 +36,17 @@ export async function CustomerChangeOrder(order){
              });
              if(response.ok){
              alert("변경 되었습니다");
-             setTimeout(function() {
-              alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-          }, 1000);
-             window.location.href = "/adminHome";
+             window.location.href = "/adminHome?page=AdminCustomer";
   
              }
              else{
                  alert("변경 중에 오류가 발생했습니다.");
-                 setTimeout(function() {
-                  alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-              }, 1000);
-                 window.location.href = "/adminHome";
+                 window.location.href = "/adminHome?page=AdminCustomer";
              }
          } catch (error) {
              console.error("Error:", error);
              alert("변경 중에 오류가 발생했습니다.");
-             setTimeout(function() {
-              alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-          }, 1000);
-             window.location.href = "/adminHome";
+             window.location.href = "/adminHome?page=AdminCustomer";
          }
      }
    
@@ -86,25 +77,16 @@ export async function DeleteCustomerReview(id){
            });
            if(response.ok){
            alert("삭제 되었습니다");
-           setTimeout(function() {
-             alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-         }, 500);
-           window.location.href = "/adminHome";
+           window.location.href = "/adminHome?page=AdminCustomer";
            }
            else{
                alert("삭제 중에 오류가 발생했습니다.");
-               setTimeout(function() {
-                 alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-             }, 1000);
-               window.location.href = "/adminHome";
+               window.location.href = "/adminHome?page=AdminCustomer";
            }
        } catch (error) {
            console.error("Error:", error);
            alert("삭제 중에 오류가 발생했습니다.");
-           setTimeout(function() {
-             alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-         }, 1000);
-           window.location.href = "/adminHome";
+           window.location.href = "/adminHome?page=AdminCustomer";
        }
    }
 }
@@ -116,7 +98,7 @@ export async function InsertCustomerReview(){
   const customerReviewCarsort=document.querySelector('.CarSort_Text').value;
   const customerReviewPrice="미정";
   const customerReviewDate=document.querySelector('.Date_Text').value;
-  const customerReviewTextarea=document.querySelector('.TextArea_Text').value
+  const customerReviewTextarea=document.querySelector('#TextArea_Text').value
   const Review_IMG = img.files[0];
   const json= {
     "customerReviewBrand": customerReviewBrand,
@@ -142,27 +124,52 @@ formData.append('json',JSON.stringify(json));
 
                 if(response.ok){
                 alert("등록 되었습니다");
-                setTimeout(function() {
-                  alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-              }, 1000);
-                window.location.href = "/adminHome";
+                window.location.href = "/adminHome?page=AdminCustomer";
 
                 }
                 else{
                     alert("등록 중에 오류가 발생했습니다.");
-                    setTimeout(function() {
-                      alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-                  }, 1000);
-                    window.location.href = "/adminHome";
+                    window.location.href = "/adminHome?page=AdminCustomer";
                 }
             } catch (error) {
                 console.error("Error:", error);
                 alert("등록 중에 오류가 발생했습니다.");
-                setTimeout(function() {
-                  alert.close(); // 이 함수는 alert를 닫을 수 있는 것으로 가정합니다. (alert.close()는 존재하지 않습니다.)
-              }, 1000);
-                window.location.href = "/adminHome";
+                window.location.href = "/adminHome?page=AdminCustomer";
             }
     }
 }
 
+export async function ChangeTextArea(customerReviewCode){
+  var intext = document.getElementById('TextArea_Change').value;
+     /* eslint-disable no-restricted-globals */
+     var returnValue = confirm('변경 하시겠습니까?');
+     /* eslint-enable no-restricted-globals */
+     if (returnValue == true) {
+         try {
+             const response = await fetch("/DaWonCar/Admin/Review/Update", {
+                 method: "POST",
+                 headers: {
+                     "Content-Type": "application/json",
+                 },
+                 body: JSON.stringify({
+                  "customerReviewCode" : customerReviewCode,
+                  "customerReviewTextArea" : intext
+                 })
+   
+             });
+             if(response.ok){
+             alert("변경 되었습니다");
+             window.location.href = "/adminHome?page=AdminCustomer";
+             }
+             else{
+                 alert("변경 중에 오류가 발생했습니다.");
+                 window.location.href = "/adminHome?page=AdminCustomer";
+             }
+         } catch (error) {
+             console.error("Error:", error);
+             alert("변경 중에 오류가 발생했습니다.");
+             window.location.href = "/adminHome?page=AdminCustomer";
+         }
+     }
+
+}

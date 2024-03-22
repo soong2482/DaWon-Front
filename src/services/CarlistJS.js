@@ -19,4 +19,6 @@ function CarlistJS(){
 }
   
   export default CarlistJS;
-  
+  export function windowsLocationRequest(CarName,Sort){
+    window.location.href="requestpage?name="+CarName+"&sort="+Sort;
+  }

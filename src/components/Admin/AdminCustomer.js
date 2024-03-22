@@ -1,6 +1,6 @@
 import "../../styles/admincustomer.css";
 import React, {useState,useEffect} from 'react';
-import {openPopup,closePopup,CustomerChangeOrder,DeleteCustomerReview,InsertCustomerReview} from "../../services/AdminCustomerJS";
+import {ChangeTextArea,openPopup,closePopup,CustomerChangeOrder,DeleteCustomerReview,InsertCustomerReview} from "../../services/AdminCustomerJS";
 import DaWonLogo from "../../assets/dawonlogo.png";
 
 import axios from 'axios';
@@ -54,7 +54,7 @@ function AdminCustomer(){
                                             <div className="Admin_customer_review_pop_Insert_TextArea">
                                                 <div className="Admin_customer_review_pop_Insert_TextArea_Title">내용</div>
                                                 <div className="Admin_customer_review_pop_Insert_TextArea_Text">
-                                                    <textarea className="TextArea_Text"
+                                                    <textarea id="TextArea_Text"className="TextArea_Text"
                                                     placeholder="ex)출고 소식 안내드립니다.!!^^
                                                      BMW 740i sDrive M스포츠  
                                                     블랙 사파이어 메탈릭 / 모카시트 입니다.
@@ -126,6 +126,7 @@ function AdminCustomer(){
                         <th>Date</th>
                         <th>이미지 확인</th>
                         <th>내용 확인</th>
+                        <th>내용 변경</th>
                         <th>순서 변경</th>
                         <th>삭제</th>
                     </tr>
@@ -158,6 +159,34 @@ function AdminCustomer(){
                                 <div className="Admin_customer_review_pop_inner">
                                      {customerreview.customerReviewTextarea}
                                     <button type="button"onClick={() =>closePopup("TEXT"+customerreview.customerReviewCode)} className="Admin_customer_review_btn_close">닫기</button>
+                                </div>
+                            </div>    
+                        </td>
+                        <td>
+                            <button field={"TEXTCHANGE"+customerreview.customerReviewCode} onClick={()=> openPopup("TEXTCHANGE"+customerreview.customerReviewCode)} className="Admin_customer_review_btn_open">내용 변경</button>
+                            <div id={"TEXTCHANGE"+customerreview.customerReviewCode}className="Admin_customer_review_pop_wrap" style={{display:'none'}}>
+                                <div className="Admin_customer_review_pop_inner">
+                                <div className="Admin_customer_review_pop_Insert_TextArea_Title">내용</div>
+                                                <div className="Admin_customer_review_pop_Insert_TextArea_Text">
+                                                    <textarea id="TextArea_Change"className="TextArea_Text"
+                                                    placeholder="ex)출고 소식 안내드립니다.!!^^
+                                                     BMW 740i sDrive M스포츠  
+                                                    블랙 사파이어 메탈릭 / 모카시트 입니다.
+                                                    
+                                                    일산에서 사업을 하고 계시는 대표님~!!
+                                                    앞전에 좋은 인연이 되어 740Li를 이용하시다가
+                                                    신형 7시리즈를 눈 여겨 보셨다가 기존 차량 정리와 동시에
+                                                    신형 7시리즈 출고로 다시 한번 좋은 인연이 되어 주셨습니다.!
+                                                    좋은 인연 차량 출고 하고 끝이 아닌 이용하시는 동안 끝까지
+                                                    불편함 없도록 하겠습니다."
+                                                    >
+
+                                                    </textarea>
+                                                </div>
+                                                <div className="ChangeInTextButton">
+                                                    <button className="ChangeInTextButton" onClick={() =>ChangeTextArea(customerreview.customerReviewCode)}>내용 변경</button>
+                                                </div>
+                                    <button type="button"onClick={() =>closePopup("TEXTCHANGE"+customerreview.customerReviewCode)} className="Admin_customer_review_btn_close">닫기</button>
                                 </div>
                             </div>    
                         </td>
