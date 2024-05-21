@@ -1,24 +1,30 @@
 import axios from 'axios';
 
-function CarlistJS(){
-  var buttons = document.querySelectorAll('[id^="test_id"]');
 
-  // Add click event listener to each button
-  buttons.forEach(function(button) {
-    button.addEventListener('click', function() {
-  //     // Get id and field values
-      var idValue = button.id;
-      var fieldValue = button.getAttribute('field');
-
-  //     // Log values to the console
-      console.log('ID:', idValue, 'Field:', fieldValue);
-    window.location.href="requestpage?name="+idValue+"&sort="+fieldValue;
-    });
-  });
-
-}
-  
-  export default CarlistJS;
   export function windowsLocationRequest(CarName,Sort){
     window.location.href="requestpage?name="+CarName+"&sort="+Sort;
   }
+  export function windowsLocationDetailRequest(CarCode, CarImg) {
+    var existingData = localStorage.getItem('RecordCar');
+    var json = existingData ? JSON.parse(existingData) : {};
+    if(!json["CarCode"] || DuplicatedCarCode(json,CarCode)){
+      json["CarCode"] = json["CarCode"] || [];
+      json["CarImg"] = json["CarImg"] || [];
+      if(json["CarCode"].length >= 3){
+        json["CarCode"].shift(); 
+        json["CarImg"].shift(); 
+      }
+      json["CarCode"].push(CarCode);
+      json["CarImg"].push(CarImg);
+      localStorage.setItem('RecordCar', JSON.stringify(json));
+    }
+    window.location.href = "DetailCar?carCode=" + CarCode;
+}
+function DuplicatedCarCode(json,CarCode){
+  for(var i=0; i<json["CarCode"].length; i++){
+    if(json["CarCode"][i]==CarCode){
+      return false;
+    }
+  }
+  return true;
+}

@@ -54,16 +54,30 @@ export async function CarInsert(){
   var carRentPrice =  document.querySelector(".Admin_car_insert_Car_Rent").value;
   var carBrand = document.querySelector(".Admin_car_insert_Brand_Select").value;
   var img = document.getElementById('imageUpload');
+  var Car_original_price = document.getElementById('Car_original_price').value;
+  var Car_sort = document.getElementById('Car_sort').value;
+  var Car_fuel = document.getElementById('Car_fuel').value;
+  var Car_mileage = document.getElementById('Car_ileage').value;
+  var Car_48_price = document.getElementById('Car_48_price').value;
+  var Car_24_price = document.getElementById('Car_24_price').value;
+
   const Car_IMG = img.files[0];
-  const json= {
+  const MasterCarjson= {
     "masterCarName": masterCarName,
     "carLeasePrice": carLeasePrice,
     "carRentPrice": carRentPrice,
-    "carBrandName": carBrand
+    "carBrandName": carBrand,
+    "carRealPrice" : Car_original_price,
+    "carSort" : Car_sort,
+    "carFuel": Car_fuel,
+    "carMileage": Car_mileage,
+    "car48Price": Car_48_price,
+    "car24Price": Car_24_price
 }
+
 const formData = new FormData();
 formData.append('Car_IMG',Car_IMG);
-formData.append('AddCar',JSON.stringify(json));
+formData.append('AddCar',JSON.stringify(MasterCarjson));
    /* eslint-disable no-restricted-globals */
 var returnValue = confirm('등록 하시겠습니까?');
 /* eslint-enable no-restricted-globals */
@@ -478,4 +492,49 @@ export async function ChangeOptionPrice(){
                alert("등록 중에 오류가 발생했습니다.");
            }
    }
+  }
+  export async function ChangeDetailCar(carCode){
+    var carRealPrice = document.getElementById('C_Car_original_price').value;
+    var carSort = document.getElementById('Change_Car_sort').value;
+    var carFuel = document.getElementById('Change_Car_fuel').value;
+    var carMileage = document.getElementById('Change_Car_ileage').value;
+    var car48Price = document.getElementById('C_Car_48_price').value;
+    var car24Price = document.getElementById('C_Car_24_price').value;
+          
+   
+    /* eslint-disable no-restricted-globals */
+  var returnValue = confirm('차량 정보를 변경 하시겠습니까?');
+  /* eslint-enable no-restricted-globals */
+  
+    
+  if (returnValue == true) {
+      try {
+          const response = await fetch("/DaWonCar/Admin/Change/CarDetail", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                "carCode": carCode,
+                "carRealPrice": carRealPrice,
+                "carSort": carSort,
+                "carMileage": carMileage,
+                "carFuel":carFuel,
+                "car48Price": car48Price,
+                "car24Price": car24Price 
+              })
+          });
+          if(response.ok){
+          alert("변경 되었습니다");
+          window.location.href = "/adminHome?page=AdminCar";
+     
+          }
+          else{
+              alert("변경 중에 오류가 발생했습니다.");
+          }
+      } catch (error) {
+          console.error("Error:", error);
+          alert("변경 중에 오류가 발생했습니다.");
+      }
+  }
   }

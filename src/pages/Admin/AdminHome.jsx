@@ -1,4 +1,5 @@
 import DawonLogo from "../../assets/dawonlogo.png";
+import axios from 'axios';
 import React, { useState,useEffect } from 'react';
 import "../../styles/adminpage.css";
 import AdminFastinquired from "../../components/Admin/Adminfastinquired";
@@ -6,11 +7,25 @@ import AdminInquired from "../../components/Admin/Admininquired";
 import AdminBanner from "../../components/Admin/Adminbanner";
 import AdminCustomer from "../../components/Admin/AdminCustomer";
 import AdminCar from "../../components/Admin/AdminCar";
-import {location} from "../../services/AdminHomeJs";
+import {location,fetchLogout} from "../../services/AdminHomeJs";
 function AdminHome(){
     const [page,setPage] =useState(null);
     useEffect(() => {
-        // URL의 쿼리 문자열을 추출합니다.
+        const fetchLogin = async() =>{
+            try{
+                const response = await axios.post('DaWonCar/AdminLogin',null,{
+                    method:"POST",
+                    withCredentials: true,
+                    headers: {
+                        "Content-Type": "application/json"
+                    },  
+                });
+            }catch(error){
+                alert("접근 권한이 없습니다.");
+                window.location.href = '/adminpage';
+            }
+        }
+        fetchLogin();
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const adminCarValue = urlParams.get('page');
@@ -69,6 +84,7 @@ function AdminHome(){
         <div className="main">
         <div className="top">
             <div className="content_title">adminpage</div>
+            <div className="AdminHome_Logout_Div"><button onClick={()=>{fetchLogout()}}>로그아웃</button></div>
         </div>
         <div className="main_content">
             <div id = "content" className="content">

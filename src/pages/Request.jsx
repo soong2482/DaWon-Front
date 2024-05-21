@@ -1,6 +1,6 @@
 import "../styles/request.css";
-import Header from "../hooks/Header";
-import Fotter from '../hooks/Fotter';
+import Header from "../components/Header";
+import Fotter from '../components/Fotter';
 import Back from "../assets/back.png";
 import DawonLogo from "../assets/dawonlogo.png";
 
@@ -20,15 +20,14 @@ function Request(){
     
     ※ 고객님은 개인정보 수집·이용에 동의를 거부할 권리가 있으며 단, 동의 거부 시 상담 제공이 불가능합니다.
       `;
-
-    const location = useLocation();
-
-    // URL 쿼리스트링에서 값을 추출
-    const queryParams = new URLSearchParams(location.search);
-    const initialSort = queryParams.get('sort');
-    const [isCheckedLease, setIsCheckedLease] = useState(initialSort === 'lease');
-  const [isCheckedRent, setIsCheckedRent] = useState(initialSort === 'rent');
-
+      const location = useLocation();
+      const queryParams = new URLSearchParams(location.search);
+      const initialSort = queryParams.get('sort');
+      const [isCheckedLease, setIsCheckedLease] = useState(initialSort === 'lease');
+      const [isCheckedRent, setIsCheckedRent] = useState(initialSort === 'rent');
+      const initialName = queryParams.get('name') || '';
+      const [name, setName] = useState(initialName);
+      const [textValue, setTextValue] = useState("");
   const handleCheckboxChange = (event) => {
     const { name, checked } = event.target;
     if (name === 'lease') {
@@ -39,9 +38,29 @@ function Request(){
       setIsCheckedLease(false);
     }
   };
-    const initialName = queryParams.get('name') || '';
-    const [name, setName] = useState(initialName);
+  const handleChange = (event) => {
+    setTextValue(event.target.value); // 상태 업데이트
+};
+
     useEffect(() => {
+
+
+        const selectCarData = localStorage.getItem("SelectCar");
+        if (selectCarData !== null) {
+            const selectCarObj = JSON.parse(selectCarData);
+            const formattedOptions = selectCarObj["Option(옵션)"].join(",");
+            selectCarObj["Option(옵션)"] = formattedOptions;
+
+            // 키와 값을 각각의 줄에 표시하는 문자열 생성
+            let formattedData = "";
+            for (const key in selectCarObj) {
+                if (selectCarObj.hasOwnProperty(key)) {
+                    formattedData += key + ": " + selectCarObj[key] + "\n";
+                }
+            }
+
+            setTextValue(formattedData+"\n문의 내용:");
+        }
         requestJS();
         const currentSort = queryParams.get('sort');
         setIsCheckedLease(currentSort === 'lease');
@@ -116,7 +135,7 @@ function Request(){
                              <div className="form_content">
                                 <div className="form_content_sidebar"></div>
                                 <div className="form_content_content"><p>자세한 문의 내용</p>
-                                    <textarea id="text" name="text" className="content_textarea" placeholder="자세한 문의 내용을 입력해주세요."></textarea>
+                                    <textarea  cols="20" rows="8"id="text" name="text" className="content_textarea" placeholder="자세한 문의 내용을&#13;&#10; 입력해주세요." onChange={handleChange} value={textValue}></textarea>
                                 </div>
                                 </div>
                                  <br/><br/><br/><br/><br/>
@@ -126,8 +145,7 @@ function Request(){
                                      <div className="form_title_2_flex">
                                          <div className="form_title_2_sidebar"></div>
                                     <div className="form_title_2_content">
-					                    <textarea id="agreearea"  defaultValue={defaultAgreeText} style={{resize: false}} readOnly>
-					                    </textarea>
+                                    <textarea id="agreearea" defaultValue={defaultAgreeText} style={{resize: "none"}} readOnly></textarea>
                                     </div>
                                 </div>
                             </div>

@@ -1,0 +1,16 @@
+.call_popup_Container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15vh;
+}
+.call_popup_Container img{
+    width:6vw;
+    height:13vh;
+    margin-top: 5vh;
+}
+@media (max-width: 1400px) and (min-width:901px) {
+    .call_popup_Container img{
+        width:7vw;
+        height:12vh;
+    }
+}

@@ -43,7 +43,7 @@ hr{
 }
 .admin_container .main .top{
     flex-grow: 1;
-    max-height: 1vh;
+    max-height: 20vh;
 }
 .admin_container .main .main_content{
     flex-grow: 5;
@@ -53,6 +53,16 @@ hr{
     float: center;
     font-size: 40px;
     font-weight: bold;
-
+}
+.AdminHome_Logout_Div{
+    margin-top: 0vh;
+    text-align: center;
+}
+.AdminHome_Logout_Div button{
+    width:15vw;
+    height: 5vh;
+    background-color: rgb(46, 68, 128);
+    color: white;
+    border:none;
 }
 

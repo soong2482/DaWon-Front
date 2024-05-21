@@ -4,15 +4,13 @@ import "../styles/uicons.css";
 import "../styles/uicons2.css";
 import React, { useEffect, useState } from 'react';
 import HomeJS from '../services/HomeJS';
-
-import Header from "../hooks/Header";
+import RecordItem from "../components/RecordItem";
+import Header from "../components/Header";
 import Slider from "../components/HomeSlider";
-import Fotter from '../hooks/Fotter';
+import Fotter from '../components/Fotter';
 import CarList from "../components/CarList";
 import CustomerReview from "../components/CusotmerReview";
-import call_img from "../assets/call_img.jpg";
-import talk_img from "../assets/talk_img.jpg";
-import inquired_img from "../assets/inquired_img.jpg";
+import CallRequestPopup from "../components/CallRequestPopup"
 import dawonlogo from "../assets/dawonlogo.png";
 import axios from 'axios';
 function Home(){
@@ -111,7 +109,7 @@ function Home(){
                   </div>
 
              </div>
-             <div id="pop_info_detail" className="pop_wrap" style={{ display: 'none' }}>
+             <div id="pop_info_detail2" className="pop_wrap" style={{ display: 'none' }}>
 
                 <div className="pop_inner">
 
@@ -130,7 +128,7 @@ function Home(){
                     <div>3) 보유기간 : 제공일로 부터 1년간</div>
                     <div>4) 상담신청을 위해 필요한 최소한의 개인정보이므로 동의를 해주셔야 서비스를 이용하실 수 있습니다.</div>
                     <br/>
-                    <div>※ 고객님은 개인정보 수집·이용에 동의를 거부할 권리가 있으며 단, 동의 거부 시 상담 제공이 불가능합니다.</div>
+                    <div    >※ 고객님은 개인정보 수집·이용에 동의를 거부할 권리가 있으며 단, 동의 거부 시 상담 제공이 불가능합니다.</div>
                     </div>
                     <button type="button" className="btn_close">닫기</button>
                 </div>
@@ -150,7 +148,7 @@ function Home(){
         </div>
         <div className="home-second">
          <div className="sidebar">
-           
+            <RecordItem/>
            </div>
 
            <div className="home-second-main">
@@ -169,17 +167,17 @@ function Home(){
               </div>
            </div>       
              <div className="sidebab" id="sidebab">
-                 <div className="sidebab_button" id="sidebab_button">
-                 <img id="callimg" src={call_img}  style={{ width: '6vw', height: '14vh' }}/>
-                        <img id="inquiredimg" src={inquired_img}style={{ width: '6vw', height: '14vh' }}/>
-                            <img id="talkimg" src={talk_img} style={{ width: '6vw', height: '14vh' }}/>
-                 </div>
+                <div className="CallRequestPopup">
+                  <CallRequestPopup/>
+                </div>
              </div>
            </div>
            <div className="home-third">
              <div id="centerbanner">
               {CenterBanner.map((CenterBanner,index)=>(
+              <div key={index}>
                <img id="CenterBannerIMG" src={"/IMG"+CenterBanner.centerBannerImgURL} alt="x"></img>
+               </div>
               ))}
 
             </div>
@@ -187,7 +185,7 @@ function Home(){
              <div className="customer_review">
                <div className="review_top">
                <div className="review_top_title">
-  <p>
+  <p className="center_banner_text">
     <i>
       <span className="title_color">D</span>
       <span className="title_color2">a</span>wonCar

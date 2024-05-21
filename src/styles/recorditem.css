@@ -1,0 +1,39 @@
+.RecordItemContainer{
+    border: 0.2vw solid rgba(20, 97, 133, 0.589);
+    text-align: center;
+    max-width:8vw;
+    margin-left: 2vw;
+    min-width:8vw;
+    background-color: rgb(255, 255, 255);
+    min-height: 54vh;
+    max-height: 54vh;
+}
+.RecordText{
+    border-bottom: 0.15vw solid rgb(0, 0, 0);
+    font-size: 1vw;
+    font-weight: bold;
+    color:rgb(255, 255, 255);
+    min-height: 3vh;
+    max-height: 3vh;
+    background-color: rgb(22, 88, 145);
+    font-style: italic;
+}
+.RecordItem{
+    margin-top: 1vh;
+    min-height: 15.8vh;
+    max-height: 15.8vh;
+    border-bottom: 0.1vw solid rgba(20, 97, 133, 0.589);
+}
+.RecordItemList img{
+    min-width:8vw;
+    max-width: 8vw;   
+    min-height: 15.8vh;
+    max-height: 15.8vh;
+}
+.RecordItem:hover{
+    opacity: 0.6;
+    transform: scale(1.01);
+    transition: 0.7s;
+}
+
+

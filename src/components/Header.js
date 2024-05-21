@@ -25,7 +25,7 @@ const Header = () => {
         <div className="whiteback"></div>
         <ul className="menu">
           <li>
-            <a id="scroll-car" href="#" className="hide">
+            <a id="scroll-car" href="RecommendCar" className="hide">
               추천차량<i className="fi fi-sr-angle-small-down"></i>
             </a>
           </li>

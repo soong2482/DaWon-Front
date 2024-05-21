@@ -1,7 +1,7 @@
 import DaWonLogo from "../../assets/dawonlogo.png";
 import "../../styles/admincar.css";
 import React, {useState,useEffect} from 'react';
-import {InsertBrand,DeleteBrand,ChangeCarLeasePrice,ChangeCarOrder,CarDelete,UpdateRecommendCar,ChangeTrimPrice,deleteOption,ChangeOptionPrice,TrimInsert, CarInsert,openPopup,closePopup,openInsertTrimPopup,openAlterTrimPopup,deleteTrim,openInsertOptionPopup,openAlterOptionPopup, OptionInsert } from "../../services/AdminCarJS";
+import {ChangeDetailCar,InsertBrand,DeleteBrand,ChangeCarLeasePrice,ChangeCarOrder,CarDelete,UpdateRecommendCar,ChangeTrimPrice,deleteOption,ChangeOptionPrice,TrimInsert, CarInsert,openPopup,closePopup,openInsertTrimPopup,openAlterTrimPopup,deleteTrim,openInsertOptionPopup,openAlterOptionPopup, OptionInsert } from "../../services/AdminCarJS";
 import axios from 'axios';
 
 function AdminCar(){
@@ -13,12 +13,46 @@ function AdminCar(){
     const [selectedTrimIndex, setSelectedTrimIndex] = useState(null);
     const [selectedTrimName,setSelectedTrimIName] = useState(null);
     const [CommasValue,setCommasValue] = useState('');
+    const [OrignalCarValue,setOriginalCarValue] = useState('');
+    const [CarPrice48,setCarPrice48] = useState('');
+    const[CarPrice24,setCarPrice24] = useState('');
     const [CarBrandList,setCarBrandList] =useState([]);
+    const [DetailList,setDetailList] = useState([]);
+    const [CarSort,setCarSort] = useState('');
+    const [CarFuel,setCarFuel] = useState('');
+    const [CarMileage,setCarMileage] = useState('');
     const handlePriceChange = (e) => {
         const value = e.target.value;
         const newValue = value.replace(/[^0-9]/g, '');
         setCommasValue(addCommasToNumber(newValue));
     };
+    const setCarSortValue = (e) =>{
+        const value = e.target.value;
+        setCarSort(value);
+    }
+    const setCarFuelValue = (e) =>{
+        const value = e.target.value;
+        setCarFuel(value);
+    }
+    const setCarMileageValue = (e) =>{
+        const value = e.target.value;
+        setCarMileage(value);
+    }
+    const handleOriginPriceChange = (e) =>{
+        const value = e.target.value;
+        const newValue = value.replace(/[^0-9]/g, '');
+        setOriginalCarValue(addCommasToNumber(newValue));
+    }
+    const handleCarPrice48Change = (e) =>{
+        const value = e.target.value;
+        const newValue = value.replace(/[^0-9]/g, '');
+        setCarPrice48(addCommasToNumber(newValue));
+    }
+    const handleCarPrice24Change = (e) =>{
+        const value = e.target.value;
+        const newValue = value.replace(/[^0-9]/g, '');
+        setCarPrice24(addCommasToNumber(newValue));
+    }
 
     const addCommasToNumber = (number) => {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -26,6 +60,9 @@ function AdminCar(){
     
     const ValueReset = (e) =>{
         setCommasValue('');
+        setOriginalCarValue('');
+        setCarPrice24('');
+        setCarPrice48('');
     }
 
     async function getTrimList(id) {
@@ -42,6 +79,23 @@ function AdminCar(){
         } catch (error) {
             console.error('데이터를 불러오는 도중 오류 발생:', error);
         }
+    }
+    async function getDetailList(id){
+        try{
+            const response = await axios.get('DaWonCar/CarDetailList',{
+                headers:{
+                    "Content-Type": "application/json",
+                    "CarCode": id
+                }
+            })
+            console.log(response.data);
+            if (response.status === 200) {
+                setDetailList(response.data);
+            }
+        } catch (error) {
+            console.error('데이터를 불러오는 도중 오류 발생:', error);
+        }
+        
     }
     async function getOptionList(id, Name, index) {
         setSelectedTrimIndex(index);
@@ -161,6 +215,44 @@ function AdminCar(){
                                     </div>
                                 </div>
                             </div>
+                            <div className="Admin_car_insert_pop_container_detail">
+                                <div className="Admin_car_insert_car_real_price">
+                                    <div className="Admin_car_insert_Title">차량 원가</div>
+                                    <div className="Admin_car_insert_Input">    
+                                        <input id="Car_original_price" placeholder="ex)100,000,000"onChange={handleOriginPriceChange} value={OrignalCarValue}></input>
+                                    </div>
+                                </div>
+                                <div className="Admin_car_insert_car_sort">
+                                    <div className="Admin_car_insert_Title">차량 엔진 종류</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="Car_sort" placeholder="ex)대형차"></input>
+                                        </div>
+                                </div>
+                                <div className="Admin_car_insert_car_fuel">
+                                    <div className="Admin_car_insert_Title">차량 연료</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input  id="Car_fuel" placeholder="ex)가솔린,가솔린+전기,디젤"></input>
+                                        </div>
+                                </div>
+                                <div className="Admin_car_insert_car_ileage">
+                                    <div className="Admin_car_insert_Title">차량 연비</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="Car_ileage" placeholder="ex)복합연비 7.9~12.0 km/ℓ"></input>
+                                        </div>
+                                </div>
+                                <div className="Admin_car_insert_car_48_price">
+                                    <div className="Admin_car_insert_Title">48개월 리스 가격</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="Car_48_price" placeholder="ex)200,000"value={CarPrice48} onChange={handleCarPrice48Change}></input>
+                                        </div>
+                                </div>
+                                <div className="Admin_car_insert_car_24_price">
+                                    <div className="Admin_car_insert_Title">24개월 리스 가격</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="Car_24_price" placeholder="ex)400,000" value={CarPrice24} onChange={handleCarPrice24Change}></input>
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                         <button type="button" onClick={() => { closePopup("CarInsert"); ValueReset(); }} className="Admin_car_list_btn_close">닫기</button>
                     </div>
@@ -229,10 +321,11 @@ function AdminCar(){
                         <th>렌트 가격</th>
                         <th>이미지 확인</th>
                         <th>차량(트림,옵션) 수정 & 확인</th>
-                        <th>추천 차량 여부</th>
-                        <th>추천 차량 설정</th>
+                        <th>추천</th>
+                        <th>추천 설정</th>
                         <th>순서 변경</th>
                         <th>가격 변경</th>
+                        <th>상세 정보 수정 & 확인</th>
                         <th>삭제</th>
                     </tr>
                 </thead>
@@ -327,7 +420,7 @@ function AdminCar(){
                                     </div>
                                </div>    
                             </td>
-                            <td>{carlist.masterCarRecommend === "1" ? 'O' : 'X'}</td>
+                            <td style={{ backgroundColor: carlist.masterCarRecommend === '1' ? 'aqua' : 'white' }}>{carlist.masterCarRecommend === '1' ? 'O' : 'X'}</td>
                             <td><button className="Admin_Car_RecommendCar_Button"onClick={()=>UpdateRecommendCar(carlist.carCode)}>추천 차량 설정</button></td>
                             <td><button className="Admin_Car_ChangeOrder_Button" onClick={()=> openPopup("ALTER_CAR_ORDER"+carlist.carCode)}>순서 변경</button>
                             <div id={"ALTER_CAR_ORDER"+carlist.carCode}className="Admin_car_list_pop_wrap" style={{display:'none'}}>
@@ -354,6 +447,106 @@ function AdminCar(){
                                         <button onClick={() =>{closePopup("ALTER_CAR_PRICE"+carlist.carCode);ValueReset(); }}className="Admin_car_list_btn_close">닫기</button>
                                     </div>
                                 </div>   
+                            </td>
+                            <td>
+                                <button className="Admin_Car_pop_open_Button" onClick={() => {openPopup("DETAIL_CAR"+carlist.carCode);getDetailList(carlist.carCode);}}>수정 & 확인</button>
+                                <div id={"DETAIL_CAR"+carlist.carCode}className="Admin_car_list_pop_wrap" style={{display:'none'}}>
+                                    <div className="Admin_car_detail_pop_inner">
+                                    <div className="Admin_car_detail_pop_flex"> 
+                                    {DetailList.map((detaillist,index)=>(
+
+                                        <div  key={index} className="Admin_car_detail_left">
+                                            <div className="Admin_car_insert_Title_Title">현재 정보</div>
+                                            <div className="Admin_car_insert_car_real_price">
+                                                <div className="Admin_car_insert_Title">차량 원가</div>
+                                                <div className="Admin_car_insert_Input">    
+                                                    <input type="text" readOnly={true} value={detaillist.carRealPrice}></input>
+                                                </div>
+                                            </div>
+                                            <div className="Admin_car_insert_car_sort">
+                                                <div className="Admin_car_insert_Title">차량 종류</div>
+                                                    <div className="Admin_car_insert_Input">    
+                                                        <input id="Car_sort"  readOnly={true}value={detaillist.carSort}placeholder="ex)대형차"></input>
+                                                    </div>
+                                            </div>
+                                            <div className="Admin_car_insert_car_fuel">
+                                                <div className="Admin_car_insert_Title">차량 연료</div>
+                                                    <div className="Admin_car_insert_Input">    
+                                                        <input  id="Car_fuel"  readOnly={true}value={detaillist.carFuel} placeholder="ex)가솔린,가솔린+전기,디젤"></input>
+                                                    </div>
+                                            </div>
+                                            <div className="Admin_car_insert_car_ileage">
+                                                <div className="Admin_car_insert_Title">차량 연비</div>
+                                                    <div className="Admin_car_insert_Input">    
+                                                        <input id="Car_ileage"  readOnly={true} value={detaillist.carMileage}placeholder="ex)복합연비 7.9~12.0 km/ℓ"></input>
+                                                    </div>
+                                            </div>
+                                            <div className="Admin_car_insert_car_48_price">
+                                                <div className="Admin_car_insert_Title">48개월 리스 가격</div>
+                                                    <div className="Admin_car_insert_Input">    
+                                                        <input id="Car_48_price"  readOnly={true}placeholder="ex)200,000"value={detaillist.car48Price}></input>
+                                                    </div>
+                                            </div>
+                                            <div className="Admin_car_insert_car_24_price">
+                                                <div className="Admin_car_insert_Title">24개월 리스 가격</div>
+                                                    <div className="Admin_car_insert_Input">    
+                                                        <input id="Car_24_price"  readOnly={true}placeholder="ex)400,000" value={detaillist.car24Price}></input>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        
+                                               ))}
+                                        
+                                         <div  className="Admin_car_detail_right">
+                                         <div className="Admin_car_insert_Title_Title">변경 내용</div>
+                                         <div className="Admin_car_insert_car_real_price">
+                                    <div className="Admin_car_insert_Title">차량 원가</div>
+                                    <div className="Admin_car_insert_Input">    
+                                        <input id="C_Car_original_price" placeholder="ex)100,000,000"onChange={handleOriginPriceChange} value={OrignalCarValue}></input>
+                                    </div>
+                                </div>
+                                <div className="Admin_car_insert_car_sort">
+                                    <div className="Admin_car_insert_Title">차량 엔진 종류</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="Change_Car_sort" onChange={setCarSortValue}  value={CarSort}placeholder="ex)대형차"></input>
+                                        </div>
+                                </div>
+                                <div className="Admin_car_insert_car_fuel">
+                                    <div className="Admin_car_insert_Title">차량 연료</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="Change_Car_fuel"onChange={setCarFuelValue}  value={CarFuel}placeholder="ex)가솔린,가솔린+전기,디젤"></input>
+                                        </div>
+                                </div>
+                                <div className="Admin_car_insert_car_ileage">
+                                    <div className="Admin_car_insert_Title">차량 연비</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="Change_Car_ileage" onChange={setCarMileageValue} value={CarMileage}placeholder="ex)복합연비 7.9~12.0 km/ℓ"></input>
+                                        </div>
+                                </div>
+                                <div className="Admin_car_insert_car_48_price">
+                                    <div className="Admin_car_insert_Title">48개월 리스 가격</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="C_Car_48_price" placeholder="ex)200,000"value={CarPrice48} onChange={handleCarPrice48Change}></input>
+                                        </div>
+                                </div>
+                                <div className="Admin_car_insert_car_24_price">
+                                    <div className="Admin_car_insert_Title">24개월 리스 가격</div>
+                                        <div className="Admin_car_insert_Input">    
+                                            <input id="C_Car_24_price" placeholder="ex)400,000" value={CarPrice24} onChange={handleCarPrice24Change}></input>
+                                        </div>
+                                </div>
+                                        </div>
+                                        </div>
+                                        <div>
+                                        <button className="change_car_detail_button" onClick={()=>ChangeDetailCar(carlist.carCode)}>변경</button>
+                                        </div>
+                                        <button onClick={() =>{closePopup("DETAIL_CAR"+carlist.carCode);ValueReset(); }}className="Admin_car_list_btn_close">닫기</button>
+                                    </div>
+                    
+                         
+                                   
+                                </div>   
+                                
                             </td>
                             <td><button className="Admin_Car_Delete_Button" onClick={()=>CarDelete(carlist.carCode)}>삭제</button></td>
                         </tr>
@@ -386,7 +579,7 @@ function AdminCar(){
                     <div>현재 가격</div>
                     <div id="Now_Option_Value"></div>
                     <div>변경할 가격</div>
-                    <div><input value={CommasValue} onChange={handlePriceChange} type="text" id="Change_Option_Value" placeholder="ex)100,000"></input></div>
+         F           <div><input value={CommasValue} onChange={handlePriceChange} type="text" id="Change_Option_Value" placeholder="ex)100,000"></input></div>
                     <div><button className="Alter_Option_Price_Button" onClick={()=>ChangeOptionPrice()}>변경</button></div>
                     <button onClick={() =>{closePopup("ALTER_OPTION_PRICE");ValueReset(); }}className="Admin_car_list_btn_close">닫기</button>
                 </div>

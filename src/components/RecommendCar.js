@@ -7,7 +7,7 @@ function CarList(){
     useEffect(() =>{
       const fetchData = async () => {
         try {
-          const data = await axios.get('DaWonCar/listCar'); // CarlistJS 함수에서 listCar 함수 호출
+          const data = await axios.get('DaWonCar/RecommendListCar'); // CarlistJS 함수에서 listCar 함수 호출
           setCarList(data.data); // 받은 데이터를 상태로 설정
 
         } catch (error) {
@@ -20,7 +20,7 @@ function CarList(){
     return(
         <ul className="car_list">
         {carList.map((carlist,index)=>(
-          <li  key={index} field={"CarCode"+carlist.carCode} onClick={()=>{windowsLocationDetailRequest(carlist.carCode,carlist.carImg)}}> 
+          <li  key={index} field={"CarCode"+carlist.carCode} onClick={()=>{windowsLocationDetailRequest(carlist.carCode)}}> 
             <div className="img"><img src={"/IMG/"+carlist.carImg}/></div>
             <div className="logo"><img src={"/IMG/"+carlist.carBrandImg} alt="AUDI"/><span>{carlist.masterCarName}</span></div>
             <hr/>

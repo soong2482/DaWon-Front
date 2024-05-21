@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+
 import axios from 'axios';
 
 function HomeJS(){
@@ -40,22 +40,14 @@ sidebabbutton.addEventListener('click', async function () {
     alert('문의신청이 취소되었습니다.');
   }
 });
-document.getElementById('inquiredimg').addEventListener('click', function () {
-  // 사용하고자 하는 함수
-  window.location.href = 'requestpage';
-});
 
-var talk = document.querySelector('#talkimg');
-talk.addEventListener('click',function(){
-  window.open("https://open.kakao.com/o/s6kBd69d");
-})
 var target = document.querySelectorAll('.btn_open');
 var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
 var targetID;
 var changeImg = document.querySelector('#sidebab');
-var sidebabbutton = document.querySelector('#sidebab_button');
+var sidebabbutton = document.querySelector('.CallRequestPopup');
 var bottom_text = document.querySelector('.review_main');
-// 팝업 열기
+
 for(var i = 0; i < target.length; i++){
   target[i].addEventListener('click', function(){
     targetID = this.getAttribute('field');
@@ -63,11 +55,12 @@ for(var i = 0; i < target.length; i++){
     sidebabbutton.style.position="static";
     bottom_text.style.position="relative";
     bottom_text.style.zIndex="-1";
+    console.log(targetID);
     document.querySelector("#"+targetID).style.display = 'block';
   });
 
 }
-// 팝업 닫기
+
 for(var j = 0; j < target.length; j++){
   btnPopClose[j].addEventListener('click', function(){
     changeImg.style.position="sticky";

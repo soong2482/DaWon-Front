@@ -69,6 +69,7 @@ tbody tr td{
     vertical-align:middle;
     font-size:0.8vw;
 }
+
 .Admin_car_img_pop_inner img{
     width:40vw;
     height:55vh;
@@ -88,7 +89,7 @@ tbody tr td{
     transition: 0.5s;
 }
 .Admin_Car_pop_open_Button{
-    width:80%;
+    width:90%;
     min-height:100%;
     background-color: rgb(216, 234, 238);
       margin:5px;
@@ -105,8 +106,17 @@ tbody tr td{
     display:inline-block;
     padding:20px 30px;
     background:#fff;
-    width:30vw;
+    width:45vw;
     height:50vh;
+    vertical-align:middle;
+    font-size:0.8vw;
+}
+.Admin_car_detail_pop_inner{
+    display:inline-block;
+    padding:20px 30px;
+    background:#fff;
+    width:35vw;
+    height: 55vh;
     vertical-align:middle;
     font-size:0.8vw;
 }
@@ -615,4 +625,44 @@ tbody tr td{
     transition: 0.6s;
     color: white;
     background-color:rgb(57, 75, 136) ;
+}
+.Admin_car_insert_pop_container_detail{
+    margin-top: 2vh;
+    margin-left: 1vw;
+}
+.Admin_car_insert_pop_container_detail div{
+    margin-top: 1vh;
+}
+.Admin_car_detail_left{
+    width:17vw;
+}
+.Admin_car_detail_left div{
+    margin-top: 1vh;
+}
+.Admin_car_detail_right{
+    width:17vw; 
+}
+.Admin_car_detail_pop_flex{
+    display: flex;
+}
+.Admin_car_detail_right div{
+    margin-top: 1vh;
+}
+.Admin_car_insert_Title_Title{
+    font-size: 1.2vw;
+    font-weight: bolder;
+}
+.change_car_detail_button{
+    width:28vw;
+    margin-top: 2vh;
+    margin-bottom: 1vh;
+    background-color: rgb(243, 243, 243);
+    border:0.15vw solid rgb(243, 243, 243);
+    font-weight: bolder;
+}
+.change_car_detail_button:hover{
+    background-color: #4b5ba3;
+    border:0.15vw solid #4b5ba3;
+    transition: 0.5s;
+    color:white;
 }

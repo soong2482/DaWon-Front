@@ -8,15 +8,18 @@ import Request from './pages/Request.jsx';
 import DetailCar from './pages/CarDetail.jsx';
 import RecommendCar from './pages/RecommendCar.jsx';
 import { Route, Routes } from 'react-router-dom';
+import CallRequestPopup from './components/CallRequestPopup.js';
 function App() {
   return (
    <Routes>
        <Route path='/' element={<Home />} />
        <Route path='/requestpage' element={<Request/>}/>
-       <Route path='/adminhome' element={<AdminHome/>}/>
-       <Route path='/adminpage' element={<AdminPage/>}/>
+       <Route path='/AdminHome' element={<AdminHome/>}/>
+       <Route path='/Adminpage' element={<AdminPage/>}/>
        <Route path='/detailcar' element={<DetailCar/>}/>
        <Route path='/RecommendCar' element={<RecommendCar/>}/>
+       <Route path='/CallRequestPopup' element={<CallRequestPopup/>}/>
+
    </Routes>
   );
 }

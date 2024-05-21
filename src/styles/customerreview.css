@@ -125,7 +125,26 @@ html,
       font-size: x-large;
       color:rgb(126, 164, 240)
     }
-
+    @media (max-width: 400px) and (min-width: 300px) {
+      .home-container .home-forth .customer_review .review_top .review_top_title{
+        font-size: 15px;
+    }
+    .home-container .home-forth .customer_review .review_top .review_top_p{
+      font-size: 10px;
+    }
+    .swiper_slide_bottom .bottom_1 .bottom_1_left{
+      font-size: 15px;
+    }
+    .swiper_slide_bottom .bottom_title{
+      font-size:7px;
+    }
+    .swiper_slide_bottom .bottom_text{
+      font-size: 5px;
+    }
+    .swiper_slide_bottom .bottom_date_pay .bottom_date{
+      font-size:  10px;
+    }
+    }
     @media (max-width: 699px) and (min-width: 401px) {
       .home-container .home-forth .customer_review .review_top .review_top_title{
         font-size: 15px;

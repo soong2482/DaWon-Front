@@ -108,7 +108,7 @@ a {
  }
 @media (max-width: 400px) and (min-width: 320px) {
      .slider-1{
-     min-height:25vh;
+     max-height:23vh;
      }
 }
  @media (max-width: 699px) and (min-width: 401px) {
@@ -118,7 +118,7 @@ a {
  }
  @media (max-width: 950px) and (min-width:700px) {
              .slider-1{
-        max-height:15vh;
+        max-height:25vh;
         }
  }
  @media (max-width: 1099px) and (min-width:901px) {

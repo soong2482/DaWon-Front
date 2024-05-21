@@ -65,8 +65,7 @@ button, html [type="button"] {
 }
 #header{
     position: sticky;
-    top:1px;
-    
+    top:0;
 }
 .home-container{
   display:flex;
@@ -88,7 +87,7 @@ button, html [type="button"] {
 flex-grow: 0.6;
 }
 .home-container .home_first_call .home_first_call_sidebar{
-    
+ 
     flex-grow: 0.3;
     margin:2%;
 }
@@ -108,7 +107,9 @@ flex-grow: 0.6;
     padding:5%;
     border-left: 4px solid #f3f3f3;
 }
-
+.RecordItemContainer{
+    margin-top: 20vh;
+}
 .main_form{
 
     margin: 5%;
@@ -412,11 +413,15 @@ background-size:cover;
 }
 .home-container .home-second .sidebar{
     flex-grow:1;
-    min-width: 180px;
-    max-width:180px;
+    min-width: 10vw;
+    max-width:10vw;
+    position: sticky;
+    height: 100vh;
+    top: 0;
  }
-.home-container .home-second .sidebab .sidebab_button { 
-    margin-top: 20vh;
+
+.home-container .home-second .sidebab .CallRequestPopup { 
+    margin-top: 15vh;
     margin-left: 1vw;
     background-color: white;
     border:none;
@@ -430,6 +435,7 @@ background-size:cover;
     position: sticky;
     top: 0; /* 화면 상단에 고정되도록 설정 */
 }
+
 
 
  @media (max-width: 319px) and (min-width: 220px) {
@@ -488,9 +494,7 @@ html, body {
 .home-first .header_img img{
     min-height: 150px;
 }
-  .form_bac{
-    display: none;
-  }
+
 .car_list .logo{
     font-size: x-small;
 }
@@ -526,6 +530,12 @@ html, body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+}
+#CenterBannerIMG{
+    height:20vh;
+}
+.center_banner_text{
+    font-size: 6vw;
 }
 .pop_wrap .pop_inner {
     display: inline-block;
@@ -578,9 +588,7 @@ html, body {
 .home-first .header_img img{
     min-height: 150px;
 }
-  .form_bac{
-    display: none;
-  }
+
 .car_list .logo{
     font-size: x-small;
 }
@@ -617,6 +625,9 @@ html, body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+}
+#CenterBannerIMG{
+    height:20vh;
 }
 .pop_wrap .pop_inner {
     display: inline-block;
@@ -669,9 +680,7 @@ html, body {
  .home-first .header_img img{
      min-height: 150px;
  }
-   .form_bac{
-     display: none;
-   }
+ 
  .car_list .logo{
      font-size: x-small;
  }
@@ -707,6 +716,10 @@ html, body {
     height: 100%;
     width: 100%;
     overflow-x: hidden;
+}
+#CenterBannerIMG {
+    width: 100vw;
+    height: 30vh;
 }
 	.pop_wrap .pop_inner {
     display: inline-block;
@@ -759,9 +772,7 @@ html, body {
 .home-first .header_img img{
     min-height: 150px;
 }
-  .form_bac{
-    display: none;
-  }
+
 .car_list .logo{
     font-size: x-small;
 }
@@ -824,9 +835,7 @@ html, body {
     .home-first .header_img img{
         min-height: 150px;
     }
-      .form_bac{
-        display: none;
-      }
+
     .car_list .logo{
        font-size: 20px;
     }
@@ -914,8 +923,8 @@ body {
     }
     .car_list li{
         width: 28%;
-   min-height: 60vh;
-   max-height: 60vh;
+   min-height: 65vh;
+   max-height: 65vh;
  }
  .home-container .home_first_call .home_first_call_main .main_main .right input{
     height:3vh;
@@ -947,7 +956,7 @@ body {
     max-height: 50vh;
  }
  .home-container .home_first_call{
-    min-height: 25vh;
+    min-height: 30vh;
     min-width: 100vw;
     max-width: 100vw;
 }
